@@ -1,0 +1,34 @@
+---
+interface Props {
+	format: string;
+}
+
+const { format } = Astro.props;
+---
+
+<div class="format">
+	{format === "Full" && <div class="full">Full</div>}
+	{format === "Workshop" && <div class="workshop">Workshop</div>}
+	{format === "Lightning" && <div class="lightning">Lightning</div>}
+</div>
+
+<style>
+	.format {
+		color: var(--colorWhite);
+		display: inline-block;
+		font-size: 1.2rem;
+		padding: 0.25rem 0.5rem;
+	}
+
+	.full {
+		background-color: red;
+	}
+
+	.workshop {
+		background-color: blue;
+	}
+
+	.lightning {
+		background-color: green;
+	}
+</style>

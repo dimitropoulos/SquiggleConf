@@ -1,0 +1,139 @@
+---
+import { Image } from "astro:assets";
+import photo from "~/assets/titian-cernicova-dragomir.jpg";
+
+import BioLinks from "./BioLinks.astro";
+import TalkTag from "./TalkTag.astro";
+import TalkFormat from "./TalkFormat.astro";
+import TalkDiscord from "./TalkDiscord.astro";
+
+export interface SpeakerInfo {
+	Twitch: string | null;
+	BlueSky: string | null;
+	"Personal Site": string | null;
+	GitHub: string | null;
+	Twitter: string | null;
+	YouTube: string | null;
+	Mastodon: string | null;
+	LinkedIn: string | null;
+	Name: string;
+	avatar: string | null;
+	qualification: string | null;
+	role: string | null;
+}
+
+export interface TalkInfo {
+	speakers: SpeakerInfo[];
+	title: string;
+	description: string;
+	tags: string[];
+	talkFormat: "Full" | "Lightning" | "Workshop";
+	discordChannel: string;
+}
+
+export interface Props {
+	// links: BioLinksPlatforms;
+	// photo: ImageMetadata;
+	talk: TalkInfo;
+}
+
+const {
+	// links,
+	talk: { title, speakers, description, tags, talkFormat, discordChannel },
+	// photo,
+	...rest
+} = Astro.props;
+---
+
+<li {...rest} class:list={["talks"]}>
+	<div class="speakers">
+		{
+			speakers.map((speaker) => (
+				<div>
+					<Image alt="" class="talks-image" src={photo} />
+					<div class="name">{speaker.Name}</div>
+					<div class="position">{speaker.role}</div>
+					<BioLinks
+						name={speaker.Name}
+						links={{
+							github: speaker.GitHub,
+							bluesky: speaker.BlueSky,
+							linkedin: speaker.LinkedIn,
+							mastodon: speaker.Mastodon,
+							twitter: speaker.Twitter,
+							website: speaker["Personal Site"],
+							youtube: speaker.YouTube,
+						}}
+					/>
+				</div>
+			))
+		}
+	</div>
+
+	<div class="talkInfo">
+		<div class="title">{title}</div>
+		<div class="description">{description}</div>
+
+		<TalkFormat format={talkFormat} />
+		<TalkDiscord discord={discordChannel} />
+		{tags.map((tag) => <TalkTag tag={tag} />)}
+	</div>
+
+	<style>
+		li {
+			border: 1px solid white;
+			min-width: 500px;
+		}
+
+		.speakers {
+			align-items: center;
+			display: flex;
+			flex-basis: 0;
+			flex-direction: row;
+			flex-grow: 1;
+			font-family: var(--fontFamilyBody);
+			gap: 0.5rem;
+			max-width: 40vw;
+		}
+
+		.title {
+			color: var(--colorForegroundBody);
+			font-size: var(--fontSizeH3);
+			font-weight: var(--fontWeightBold);
+		}
+
+		.talks {
+			align-items: flex-start;
+			display: flex;
+			flex-basis: 0;
+			flex-direction: row;
+			flex-grow: 2;
+			font-family: var(--fontFamilyBody);
+			gap: 0.25rem;
+			max-width: 40vw;
+			--imageSize: clamp(3.5rem, 10vw, 6rem);
+			--fontSize: var(--fontSizeBodySmaller);
+		}
+
+		.talkInfo {
+			flex-grow: 1;
+		}
+
+		.talks-image {
+			border-radius: 100%;
+			height: var(--imageSize);
+			width: var(--imageSize);
+			margin-bottom: 0.5rem;
+		}
+
+		.name {
+			color: var(--colorForegroundBody);
+			font-size: var(--fontSize);
+		}
+
+		.position {
+			font-size: var(--fontSizeBodySmaller);
+			font-weight: var(--fontWeightLight);
+		}
+	</style>
+</li>
