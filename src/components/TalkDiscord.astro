@@ -1,4 +1,7 @@
 ---
+import { Image } from "astro:assets";
+import Discord from "~/assets/logos/Discord.png";
+
 interface Props {
 	discord: string;
 }
@@ -7,17 +10,27 @@ const { discord } = Astro.props;
 ---
 
 <div class="discord">
-	Discord Channel: {discord}
+	<Image
+		class="image"
+		src={Discord}
+		alt={`discord channel ${Discord}`}
+		width={24}
+	/>
+	#{discord}
 </div>
 
 <style>
 	.discord {
 		background-color: var(--colorPrimary);
-		border-radius: 1rem;
+		border-radius: 0.25rem;
 		color: var(--colorWhite);
-		display: inline-block;
-		font-size: 1.2rem;
-		margin-right: 1rem;
-		padding: 0.5rem 1rem;
+		display: inline-flex;
+		align-items: center;
+		font-size: 1rem;
+		padding: 0.25rem;
+	}
+
+	.image {
+		margin-right: 0.25rem;
 	}
 </style>

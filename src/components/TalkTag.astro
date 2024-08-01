@@ -2,10 +2,113 @@
 import { ImageMetadata } from "astro";
 import { Image } from "astro:assets";
 
-import zig from "~/assets/logos/zig.svg";
+import Zig from "~/assets/logos/Zig.svg";
+import VSCode from "~/assets/logos/VSCode.png";
+import CSS from "~/assets/logos/CSS.png";
+import ChromeDevTools from "~/assets/logos/ChromeDevTools.svg";
+import WebAssembly from "~/assets/logos/WebAssembly.svg";
+import OpenTelemetry from "~/assets/logos/OpenTelemetry.png";
+import TypeScript from "~/assets/logos/TypeScript.svg";
+import JavaScript from "~/assets/logos/JavaScript.png";
+import NodeJSLogo from "~/assets/logos/NodeJS.svg";
+import SVG from "~/assets/logos/SVG.svg";
+import Rust from "~/assets/logos/Rust.svg";
+import Cpp from "~/assets/logos/Cpp.png";
+
+import Accessibility from "~/assets/logos/icon-accessibility.svg";
+import AnimationIcon from "~/assets/logos/icon-animation.svg";
+import Bug from "~/assets/logos/icon-bug.svg";
+import Diversity from "~/assets/logos/icon-diversity.svg";
+import Docs from "~/assets/logos/icon-docs.svg";
+import Footprint from "~/assets/logos/icon-footprint.svg";
+import Handyman from "~/assets/logos/icon-handyman.svg";
+import Inclusive from "~/assets/logos/icon-inclusive.svg";
+import Lightning from "~/assets/logos/icon-lightning.svg";
+import Rocket from "~/assets/logos/icon-rocket.svg";
+import Code from "~/assets/logos/icon-code.svg";
+import Stylus from "~/assets/logos/icon-stylus.svg";
+import Edit from "~/assets/logos/icon-edit.svg";
+import Vitals from "~/assets/logos/icon-vitals.svg";
+import Palette from "~/assets/logos/icon-palette.svg";
+import Headset from "~/assets/logos/icon-headset.svg";
+import Account from "~/assets/logos/icon-account.svg";
+import Forrest from "~/assets/logos/icon-forrest.svg";
+import Calculate from "~/assets/logos/icon-calculate.svg";
+import Terminal from "~/assets/logos/icon-terminal.svg";
+import Hub from "~/assets/logos/icon-hub.svg";
+import AST from "~/assets/logos/icon-ast.svg"; // BROKEN
+import Dock from "~/assets/logos/icon-dock.svg";
+import Protocol from "~/assets/logos/icon-protocol.svg";
+import Monorepo from "~/assets/logos/icon-monorepo.svg";
+
+const whiteStrokeIcons = [
+	Account,
+	Accessibility,
+	AnimationIcon,
+	Bug,
+	Diversity,
+	Docs,
+	Footprint,
+	Handyman,
+	Inclusive,
+	Lightning,
+	Code,
+	Rocket,
+	Stylus,
+	Edit,
+	Vitals,
+	Palette,
+	Headset,
+	Forrest,
+	Calculate,
+	Terminal,
+	Hub,
+	AST,
+	Dock,
+	Protocol,
+	Monorepo,
+];
 
 const images: Record<string, ImageMetadata | undefined> = {
-	zig,
+	ASTs: AST,
+	"Accessibility Tree": Accessibility,
+	"Build Optimization": Handyman,
+	"C++": Cpp,
+	CLIs: Terminal,
+	"CSS Animations Panel": CSS,
+	Canvas: Palette,
+	"Chrome DevTools": ChromeDevTools,
+	"Community Building": Diversity,
+	"Core Web Vitals": Vitals,
+	"Cross-Language": Hub,
+	"Debugging Tools": Dock,
+	Debugging: Bug,
+	Design: Stylus,
+	"Developer Relations": Headset,
+	Docs: Docs,
+	Documentation: Docs,
+	"Editor Extensions": VSCode,
+	"Inclusive Design": Inclusive,
+	JavaScript: JavaScript,
+	"Language Server Protocol": Protocol,
+	// "Language Soup": undefined,
+	"Launching Software Products": Rocket,
+	"Monorepo Tooling": Monorepo,
+	"Node.js": NodeJSLogo,
+	"Open Source": Account,
+	"Open Telemetry": OpenTelemetry,
+	Parsing: Calculate,
+	Performance: Lightning,
+	Rust: Rust,
+	SVG: SVG,
+	"Source Code": Code,
+	"Technical Writing": Edit,
+	Tracing: Footprint,
+	TreeSitter: Forrest,
+	TypeScript: TypeScript,
+	"Web Animations API": AnimationIcon,
+	WebAssembly: WebAssembly,
+	Zig: Zig,
 };
 
 interface Props {
@@ -13,22 +116,33 @@ interface Props {
 }
 
 const { tag } = Astro.props;
-const image = images[tag.toLowerCase()];
+const image = images[tag];
 ---
 
 <div class="tag-chip">
+	{
+		image && (
+			<Image class="tag-icon" alt={`${tag} logo`} src={image} height={24} />
+		)
+	}
 	{tag}
-	{image && <Image alt="Zig logo" src={image} width={32} height={32} />}
 </div>
 
 <style>
 	.tag-chip {
+		display: inline-flex;
+		align-items: center;
 		background-color: var(--colorPrimary);
-		border-radius: 1rem;
+		border-radius: 0.25rem;
 		color: var(--colorWhite);
-		display: inline-block;
-		font-size: 1.2rem;
+		font-size: 1rem;
 		margin-right: 1rem;
-		padding: 0.5rem 1rem;
+		margin-top: 0.25rem;
+		margin-bottom: 0.25rem;
+		padding: 0.25rem;
+	}
+
+	.tag-icon {
+		margin-right: 0.5rem;
 	}
 </style>
