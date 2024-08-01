@@ -1,13 +1,24 @@
 ---
+import { ImageMetadata } from "astro";
+import { Image } from "astro:assets";
+
+import zig from "~/assets/logos/zig.svg";
+
+const images: Record<string, ImageMetadata | undefined> = {
+	zig,
+};
+
 interface Props {
 	tag: string;
 }
 
 const { tag } = Astro.props;
+const image = images[tag.toLowerCase()];
 ---
 
 <div class="tag-chip">
 	{tag}
+	{image && <Image alt="Zig logo" src={image} width={32} height={32} />}
 </div>
 
 <style>
