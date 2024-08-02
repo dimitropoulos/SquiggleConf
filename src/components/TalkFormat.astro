@@ -7,28 +7,28 @@ const { format } = Astro.props;
 ---
 
 <div class="format">
-	{format === "Full" && <div class="full">Full</div>}
+	{format === "Full" && <div class="full">Full-Length Talk</div>}
 	{format === "Workshop" && <div class="workshop">Workshop</div>}
-	{format === "Lightning" && <div class="lightning">Lightning</div>}
+	{format === "Lightning" && <div class="lightning">Lightning Talk</div>}
 </div>
 
 <style>
 	.format {
 		color: var(--colorWhite);
 		display: inline-block;
-		font-size: 1.2rem;
+		font-size: 1rem;
 		padding: 0.25rem 0.5rem;
 	}
 
 	.full {
-		background-color: red;
+		/* background-color: red; */
 	}
 
 	.workshop {
-		background-color: blue;
+		/* background-color: blue; */
 	}
 
 	.lightning {
-		background-color: green;
+		/* background-color: green; */
 	}
 </style>

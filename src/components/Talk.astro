@@ -1,6 +1,6 @@
 ---
 import { Image } from "astro:assets";
-import photo from "~/assets/titian-cernicova-dragomir.jpg";
+import fallback from "~/assets/avatars/avatar-placeholder.png";
 
 import BioLinks from "./BioLinks.astro";
 import TalkTag from "./TalkTag.astro";
@@ -32,103 +32,169 @@ export interface TalkInfo {
 }
 
 export interface Props {
-	// links: BioLinksPlatforms;
-	// photo: ImageMetadata;
 	talk: TalkInfo;
 }
 
 const {
 	// links,
-	talk: { title, speakers, description, tags, talkFormat, discordChannel },
-	// photo,
+	talk: { title, speakers, tags, talkFormat, description, discordChannel },
 	...rest
 } = Astro.props;
+
+const images = import.meta.glob<{ default: ImageMetadata }>(
+	"/src/assets/avatars/*.png",
+);
 ---
 
 <li {...rest} class:list={["talks"]}>
+	<div class="talk-top">
+		<div class="title">{title}</div>
+		<div class="tags">
+			{tags.map((tag) => <TalkTag tag={tag} />)}
+		</div>
+		<div class="description">{description}</div>
+	</div>
+
 	<div class="speakers">
 		{
 			speakers.map((speaker) => (
-				<div>
-					<Image alt="" class="talks-image" src={photo} />
-					<div class="name">{speaker.Name}</div>
-					<div class="position">{speaker.role}</div>
-					<BioLinks
-						name={speaker.Name}
-						links={{
-							github: speaker.GitHub,
-							bluesky: speaker.BlueSky,
-							linkedin: speaker.LinkedIn,
-							mastodon: speaker.Mastodon,
-							twitter: speaker.Twitter,
-							website: speaker["Personal Site"],
-							youtube: speaker.YouTube,
-						}}
+				<div class="speaker">
+					<Image
+						alt={`${speaker.Name} avatar`}
+						class="speaker-image"
+						src={
+							images[`/src/assets/avatars/${speaker.avatar}`]?.() ?? fallback
+						}
 					/>
+					<div class="speaker-text">
+						<div class="name">{speaker.Name}</div>
+						<div class="position">{speaker.role}</div>
+						<BioLinks
+							name={speaker.Name}
+							links={{
+								github: speaker.GitHub,
+								bluesky: speaker.BlueSky,
+								linkedin: speaker.LinkedIn,
+								mastodon: speaker.Mastodon,
+								twitter: speaker.Twitter,
+								website: speaker["Personal Site"],
+								youtube: speaker.YouTube,
+							}}
+						/>
+					</div>
 				</div>
 			))
 		}
 	</div>
 
-	<div class="talkInfo">
-		<div class="title">{title}</div>
-		<!-- <div class="description">{description}</div> -->
-
-		<TalkFormat format={talkFormat} />
+	<div class="talks-details">
 		<TalkDiscord discord={discordChannel} />
-		{tags.map((tag) => <TalkTag tag={tag} />)}
+		<TalkFormat format={talkFormat} />
 	</div>
 
 	<style>
-		li {
-			border: 1px solid white;
-			min-width: 500px;
-		}
-
 		.speakers {
-			align-items: center;
+			align-items: flex-start;
 			display: flex;
-			flex-basis: 0;
-			flex-direction: row;
-			flex-grow: 1;
+			flex-direction: column;
 			font-family: var(--fontFamilyBody);
 			gap: 0.5rem;
-			max-width: 40vw;
+			width: 100%;
+		}
+
+		.speaker {
+			margin-left: 1rem;
+			margin-right: 1rem;
+			maring-top: 1rem;
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+		}
+
+		.speaker-image {
+			border-radius: 100%;
+			height: var(--imageSize);
+			width: var(--imageSize);
+			margin-top: 0.5rem;
+			margin-bottom: 0.5rem;
+			margin-right: 1.5rem;
+		}
+
+		.speaker-text {
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-start;
+			flex-grow: 1;
+			width: 100%;
 		}
 
 		.title {
 			color: var(--colorForegroundBody);
 			font-size: var(--fontSizeH3);
 			font-weight: var(--fontWeightBold);
+			text-align: left;
+			margin-bottom: 0.75rem;
 		}
 
 		.talks {
 			align-items: flex-start;
 			display: flex;
 			flex-basis: 0;
-			flex-direction: row;
-			flex-grow: 2;
+			flex-direction: column;
+			justify-content: space-between;
 			font-family: var(--fontFamilyBody);
-			gap: 0.25rem;
+			border: 1px solid white;
+			padding: 1rem;
+			border-radius: 0.5rem;
+			min-width: 700px;
 			max-width: 40vw;
 			--imageSize: clamp(3.5rem, 10vw, 6rem);
 			--fontSize: var(--fontSizeBodySmaller);
+			background-color: var(--colorBackdropLight);
+			box-shadow: 0 0 0.125rem var(--colorTextShadow);
 		}
 
-		.talkInfo {
+		.talk-top {
+			margin: 0.5rem;
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-start;
+		}
+
+		.tags {
+			display: flex;
+			flex-wrap: wrap;
+		}
+
+		.talks-wrapper {
 			flex-grow: 1;
+			flex-direction: column;
 		}
 
-		.talks-image {
-			border-radius: 100%;
-			height: var(--imageSize);
-			width: var(--imageSize);
-			margin-bottom: 0.5rem;
+		.talks-details {
+			display: flex;
+			flex-direction: row;
+			justify-content: flex-end;
+			width: 100%;
+			align-items: center;
 		}
 
 		.name {
 			color: var(--colorForegroundBody);
-			font-size: var(--fontSize);
+			font-size: var(--fontSizeBody);
+			display: flex;
+		}
+
+		.description {
+			color: var(--colorForegroundBody);
+			margin-top: 0.5rem;
+			margin-bottom: 0.5rem;
+			text-align: left;
+			display: -webkit-box;
+			-webkit-line-clamp: 3;
+			-webkit-box-orient: vertical;
+			text-overflow: ellipsis;
+			overflow: hidden;
 		}
 
 		.position {

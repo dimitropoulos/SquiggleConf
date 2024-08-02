@@ -15,61 +15,61 @@ import SVG from "~/assets/logos/SVG.svg";
 import Rust from "~/assets/logos/Rust.svg";
 import Cpp from "~/assets/logos/Cpp.png";
 
+import AST from "~/assets/logos/icon-ast.svg"; // BROKEN
 import Accessibility from "~/assets/logos/icon-accessibility.svg";
+import Account from "~/assets/logos/icon-account.svg";
 import AnimationIcon from "~/assets/logos/icon-animation.svg";
 import Bug from "~/assets/logos/icon-bug.svg";
+import Calculate from "~/assets/logos/icon-calculate.svg";
+import Code from "~/assets/logos/icon-code.svg";
 import Diversity from "~/assets/logos/icon-diversity.svg";
+import Dock from "~/assets/logos/icon-dock.svg";
 import Docs from "~/assets/logos/icon-docs.svg";
+import Edit from "~/assets/logos/icon-edit.svg";
 import Footprint from "~/assets/logos/icon-footprint.svg";
+import Forrest from "~/assets/logos/icon-forrest.svg";
 import Handyman from "~/assets/logos/icon-handyman.svg";
+import Headset from "~/assets/logos/icon-headset.svg";
+import Hub from "~/assets/logos/icon-hub.svg";
 import Inclusive from "~/assets/logos/icon-inclusive.svg";
 import Lightning from "~/assets/logos/icon-lightning.svg";
-import Rocket from "~/assets/logos/icon-rocket.svg";
-import Code from "~/assets/logos/icon-code.svg";
-import Stylus from "~/assets/logos/icon-stylus.svg";
-import Edit from "~/assets/logos/icon-edit.svg";
-import Vitals from "~/assets/logos/icon-vitals.svg";
-import Palette from "~/assets/logos/icon-palette.svg";
-import Headset from "~/assets/logos/icon-headset.svg";
-import Account from "~/assets/logos/icon-account.svg";
-import Forrest from "~/assets/logos/icon-forrest.svg";
-import Calculate from "~/assets/logos/icon-calculate.svg";
-import Terminal from "~/assets/logos/icon-terminal.svg";
-import Hub from "~/assets/logos/icon-hub.svg";
-import AST from "~/assets/logos/icon-ast.svg"; // BROKEN
-import Dock from "~/assets/logos/icon-dock.svg";
-import Protocol from "~/assets/logos/icon-protocol.svg";
 import Monorepo from "~/assets/logos/icon-monorepo.svg";
+import Palette from "~/assets/logos/icon-palette.svg";
+import Protocol from "~/assets/logos/icon-protocol.svg";
+import Rocket from "~/assets/logos/icon-rocket.svg";
+import Stylus from "~/assets/logos/icon-stylus.svg";
+import Terminal from "~/assets/logos/icon-terminal.svg";
+import Vitals from "~/assets/logos/icon-vitals.svg";
 
 const whiteStrokeIcons = [
-	Account,
+	AST,
 	Accessibility,
+	Account,
 	AnimationIcon,
 	Bug,
+	Calculate,
+	Code,
 	Diversity,
+	Dock,
 	Docs,
+	Edit,
 	Footprint,
+	Forrest,
 	Handyman,
+	Headset,
+	Hub,
 	Inclusive,
 	Lightning,
-	Code,
+	Monorepo,
+	Palette,
+	Protocol,
 	Rocket,
 	Stylus,
-	Edit,
-	Vitals,
-	Palette,
-	Headset,
-	Forrest,
-	Calculate,
 	Terminal,
-	Hub,
-	AST,
-	Dock,
-	Protocol,
-	Monorepo,
+	Vitals,
 ];
 
-const images: Record<string, ImageMetadata | undefined> = {
+const images: Record<string, ImageMetadata> = {
 	ASTs: AST,
 	"Accessibility Tree": Accessibility,
 	"Build Optimization": Handyman,
@@ -117,12 +117,19 @@ interface Props {
 
 const { tag } = Astro.props;
 const image = images[tag];
+const isLight = whiteStrokeIcons.includes(image);
 ---
 
 <div class="tag-chip">
 	{
 		image && (
-			<Image class="tag-icon" alt={`${tag} logo`} src={image} height={24} />
+			<Image
+				class="tag-icon"
+				class:list={["tag-icon", isLight ? "light-icon" : ""]}
+				alt={`${tag} logo`}
+				src={image}
+				height={24}
+			/>
 		)
 	}
 	{tag}
@@ -132,14 +139,21 @@ const image = images[tag];
 	.tag-chip {
 		display: inline-flex;
 		align-items: center;
-		background-color: var(--colorPrimary);
+		background-color: var(--colorOffWhite);
+		border: 1px solid var(--colorTextShadow);
 		border-radius: 0.25rem;
 		color: var(--colorWhite);
 		font-size: 1rem;
-		margin-right: 1rem;
+		margin-right: 0.25rem;
 		margin-top: 0.25rem;
 		margin-bottom: 0.25rem;
 		padding: 0.25rem;
+		white-space: nowrap;
+	}
+
+	.light-icon {
+		filter: invert(1);
+		opacity: 0.5;
 	}
 
 	.tag-icon {

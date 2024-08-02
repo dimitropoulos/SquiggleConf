@@ -21,16 +21,19 @@ const { discord } = Astro.props;
 
 <style>
 	.discord {
-		background-color: var(--colorPrimary);
+		/* background-color: var(--colorPrimary); */
 		border-radius: 0.25rem;
 		color: var(--colorWhite);
 		display: inline-flex;
 		align-items: center;
 		font-size: 1rem;
 		padding: 0.25rem;
+		font-family: monospace;
+		white-space: nowrap;
 	}
 
 	.image {
-		margin-right: 0.25rem;
+		margin-right: 0.5rem;
+		opacity: 0.5;
 	}
 </style>
