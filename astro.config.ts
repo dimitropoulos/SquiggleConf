@@ -8,5 +8,8 @@ export default defineConfig({
 	}),
 	integrations: [konamiEmojiBlast()],
 	output: "server",
+	redirects: {
+		"/speakers": "/talks",
+	},
 	site: "https://2024.squiggleconf.com",
 });
