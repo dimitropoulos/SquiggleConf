@@ -1,11 +1,11 @@
-import bluesky from "./assets/bluesky.svg";
-import discord from "./assets/discord.svg";
-import github from "./assets/github.svg";
-import linkedin from "./assets/linkedin.svg";
-import mastodon from "./assets/mastodon.svg";
-import inngestBlack from "./assets/sponsors/inngest-black.svg";
-import openjsFoundationColor from "./assets/sponsors/openjs-foundation-color.svg";
-import twitter from "./assets/twitter.svg";
+import bluesky from "~/assets/bluesky.svg";
+import discord from "~/assets/discord.svg";
+import github from "~/assets/github.svg";
+import linkedin from "~/assets/linkedin.svg";
+import mastodon from "~/assets/mastodon.svg";
+import inngestBlack from "~/assets/sponsors/inngest-black.svg";
+import openjsFoundationColor from "~/assets/sponsors/openjs-foundation-color.svg";
+import twitter from "~/assets/twitter.svg";
 
 export const links = {
 	scholarship: "https://forms.gle/pnoAmVgijk3p4j5C7",

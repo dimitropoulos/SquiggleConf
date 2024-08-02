@@ -1,37 +1,13 @@
 ---
 import { Image } from "astro:assets";
-import fallback from "~/assets/avatars/avatar-placeholder.png";
 
 import BioLinks from "./BioLinks.astro";
 import TalkTag from "./TalkTag.astro";
 import TalkFormat from "./TalkFormat.astro";
 import TalkDiscord from "./TalkDiscord.astro";
+import { TalkInfo } from "~/data/talks";
 
-export interface SpeakerInfo {
-	Twitch: string | null;
-	BlueSky: string | null;
-	"Personal Site": string | null;
-	GitHub: string | null;
-	Twitter: string | null;
-	YouTube: string | null;
-	Mastodon: string | null;
-	LinkedIn: string | null;
-	Name: string;
-	avatar: string | null;
-	qualification: string | null;
-	role: string | null;
-}
-
-export interface TalkInfo {
-	speakers: SpeakerInfo[];
-	title: string;
-	description: string;
-	tags: string[];
-	talkFormat: "Full" | "Lightning" | "Workshop";
-	discordChannel: string;
-}
-
-export interface Props {
+interface Props {
 	talk: TalkInfo;
 }
 
@@ -40,10 +16,6 @@ const {
 	talk: { title, speakers, tags, talkFormat, description, discordChannel },
 	...rest
 } = Astro.props;
-
-const images = import.meta.glob<{ default: ImageMetadata }>(
-	"/src/assets/avatars/*.png",
-);
 ---
 
 <li {...rest} class:list={["talks"]}>
@@ -59,29 +31,14 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
 		{
 			speakers.map((speaker) => (
 				<div class="speaker">
-					<Image
-						alt={`${speaker.Name} avatar`}
-						class="speaker-image"
-						src={
-							images[`/src/assets/avatars/${speaker.avatar}`]?.() ?? fallback
-						}
-					/>
+					<div class="speaker-image-container">
+						<Image alt="" class="speaker-image" src={speaker.avatar} />
+					</div>
 					<div class="speaker-text">
-						<div class="name">{speaker.Name}</div>
+						<div class="name">{speaker.name}</div>
 						<div class="position">{speaker.qualification}</div>
 						<div class="position">{speaker.role}</div>
-						<BioLinks
-							name={speaker.Name}
-							links={{
-								github: speaker.GitHub,
-								bluesky: speaker.BlueSky,
-								linkedin: speaker.LinkedIn,
-								mastodon: speaker.Mastodon,
-								twitter: speaker.Twitter,
-								website: speaker["Personal Site"],
-								youtube: speaker.YouTube,
-							}}
-						/>
+						<BioLinks name={speaker.name} links={speaker.links} />
 					</div>
 				</div>
 			))

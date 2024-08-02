@@ -1,12 +1,16 @@
 ---
+import { talks } from "~/data/talks";
+
 import Heading from "./Heading.astro";
 import SquiggleFlanked from "./SquiggleFlanked.astro";
-
 import FullSection from "./FullSection.astro";
-import Talk, { TalkInfo } from "./Talk.astro";
+import Talk from "./Talk.astro";
 import SpeakersList from "./SpeakersList.astro";
 import SpeakersArea from "./SpeakersArea.astro";
-import talks from "./talks.json";
+
+interface Props {
+	heading?: boolean;
+}
 ---
 
 <FullSection>
@@ -22,7 +26,7 @@ import talks from "./talks.json";
 
 	<SpeakersArea>
 		<SpeakersList>
-			{talks.map((talk) => <Talk talk={talk as TalkInfo} />)}
+			{talks.map((talk) => <Talk talk={talk} />)}
 		</SpeakersList>
 
 		<slot />
