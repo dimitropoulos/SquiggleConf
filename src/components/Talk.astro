@@ -68,6 +68,7 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
 					/>
 					<div class="speaker-text">
 						<div class="name">{speaker.Name}</div>
+						<div class="position">{speaker.qualification}</div>
 						<div class="position">{speaker.role}</div>
 						<BioLinks
 							name={speaker.Name}
@@ -198,6 +199,7 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
 		}
 
 		.position {
+			display: flex;
 			font-size: var(--fontSizeBodySmaller);
 			font-weight: var(--fontWeightLight);
 		}
