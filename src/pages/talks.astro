@@ -2,22 +2,24 @@
 import ContentLayout from "~/layouts/ContentLayout.astro";
 import HeroForPage from "~/components/HeroForPage.astro";
 import PrimaryContents from "~/components/PrimaryContents.astro";
-import SpeakersContent from "~/components/SpeakersContent.astro";
-import SpeakersList from "~/components/SpeakersList.astro";
+import { talks } from "~/data/talks";
+import Talk from "~/components/Talk.astro";
 ---
 
 <ContentLayout>
-	<HeroForPage>Speakers</HeroForPage>
+	<HeroForPage>Talks</HeroForPage>
 
 	<PrimaryContents>
-		<SpeakersContent>
-			<SpeakersList />
-		</SpeakersContent>
+		<ul class="talks-list">
+			{talks.map((talk) => <Talk talk={talk} />)}
+		</ul>
 	</PrimaryContents>
 </ContentLayout>
 
 <style>
-	.below-placeholders {
-		margin-top: 4rem;
+	.talks-list {
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
 	}
 </style>

@@ -78,8 +78,8 @@ export const speakers = {
 			twitter: " https://twitter.com/danvdk",
 		},
 		name: "Dan Vanderkam",
-		qualification: "TypeScript Compiler Contributor",
-		role: "Effective TypeScript",
+		qualification: "TypeScript Contributor",
+		role: "Effective TypeScript Author",
 	},
 	"don-isaac": {
 		avatar: donIsaac,
@@ -197,8 +197,8 @@ export const speakers = {
 			twitter: "https://twitter.com/TitianCernicova",
 		},
 		name: "Titian Cernicova-Dragomir",
-		qualification: "TypeScript Compiler Contributor",
-		role: "Software Engineer, Bloomberg",
+		qualification: "TypeScript Contributor",
+		role: "Engineer, Bloomberg",
 	},
 	"yagiz-nizipli": {
 		avatar: yagizNizipli,

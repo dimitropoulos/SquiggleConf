@@ -1,36 +1,44 @@
 ---
 import { talks } from "~/data/talks";
 
+import BodyText from "~/components/BodyText.astro";
 import Heading from "./Heading.astro";
 import SquiggleFlanked from "./SquiggleFlanked.astro";
 import FullSection from "./FullSection.astro";
-import Talk from "./Talk.astro";
-import SpeakersList from "./SpeakersList.astro";
-import SpeakersArea from "./SpeakersArea.astro";
-
-interface Props {
-	heading?: boolean;
-}
+import Speaker from "./Speaker.astro";
+import SubtleCard from "./SubtleCard.astro";
 ---
 
 <FullSection>
-	{
-		Astro.props.heading && (
-			<SquiggleFlanked class="squiggle-flanked" width="lean">
-				<Heading class="heading" id="speakers" level="h2" link>
-					Speakers
-				</Heading>
-			</SquiggleFlanked>
-		)
-	}
+	<SquiggleFlanked class="squiggle-flanked" width="lean">
+		<Heading class="heading" id="speakers" level="h2" link>Speakers</Heading>
+	</SquiggleFlanked>
 
-	<SpeakersArea>
-		<SpeakersList>
-			{talks.map((talk) => <Talk talk={talk} />)}
-		</SpeakersList>
+	<BodyText as="p" class="speakers-body-text" size="large" width="lean">
+		Meet the developers around the Go, TypeScript, Rust, and Zig tools that make
+		the squiggles you depend on every day.
+		<br />
+		See full details on <a href="/talks">Talks</a>.
+	</BodyText>
 
-		<slot />
-	</SpeakersArea>
+	<ul class="speakers-list">
+		{
+			talks.flatMap((talk) =>
+				talk.speakers.map((speaker) => (
+					<SubtleCard class="speaker-card">
+						<Speaker href={`/talks#${talk.slug}`} speaker={speaker} />
+					</SubtleCard>
+				)),
+			)
+		}
+	</ul>
+
+	<BodyText as="p" class="speakers-body-text" size="large" width="lean">
+		You’ll emerge with the best techniques to supercharge your projects —
+		whether you’re already a tooling wizard or trying to become one.
+		<br />
+		See full details on <a href="/talks">Talks</a>.
+	</BodyText>
 </FullSection>
 
 <style>
@@ -40,5 +48,48 @@ interface Props {
 
 	.heading {
 		font-size: var(--fontSizeH2);
+	}
+
+	.speakers-body-text {
+		margin: auto;
+	}
+
+	.speakers-list {
+		display: flex;
+		flex-direction: column;
+		font-family: var(--fontFamilyBody);
+		gap: 2rem;
+		justify-content: center;
+		padding: 2rem 0;
+	}
+
+	.speaker-card {
+		max-width: 70%;
+		width: 100%;
+	}
+
+	@media (min-width: 700px) {
+		.speakers-list {
+			align-items: center;
+			justify-content: center;
+			flex-direction: row;
+			flex-wrap: wrap;
+			margin: auto;
+			max-width: var(--widthBodyLean);
+		}
+
+		.speaker-card {
+			width: 48%;
+		}
+	}
+
+	@media (min-width: 1017px) {
+		.speakers-list {
+			max-width: var(--widthBodyFull);
+		}
+
+		.speaker-card {
+			width: 31%;
+		}
 	}
 </style>

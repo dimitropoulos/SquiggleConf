@@ -1,0 +1,23 @@
+---
+interface Props {
+	class?: string;
+}
+
+const { class: className, ...rest } = Astro.props;
+---
+
+<div class:list={["subtle-card", className]} {...rest}>
+	<slot />
+</div>
+
+<style>
+	.subtle-card {
+		align-items: flex-start;
+		background-color: var(--colorBackdropLight);
+		border-radius: 0.5rem;
+		border: 1px solid white;
+		box-shadow: 0 0 0.125rem var(--colorTextShadow);
+		font-family: var(--fontFamilyBody);
+		padding: 1rem;
+	}
+</style>

@@ -1,0 +1,80 @@
+---
+import { Image } from "astro:assets";
+
+import { SpeakerInfo } from "~/data/speakers";
+import BioLinks from "./BioLinks.astro";
+
+interface Props {
+	class?: string;
+	href: string;
+	speaker: SpeakerInfo;
+}
+
+const { class: className, speaker, ...rest } = Astro.props;
+---
+
+<li class:list={["speaker", className]} {...rest}>
+	<div class="speaker-image-container">
+		<Image
+			alt=""
+			class="speaker-image"
+			src={speaker.avatar}
+			width={128}
+			height={128}
+		/>
+	</div>
+	<div class="speaker-text">
+		<a class="speaker-text-links" href={Astro.props.href}>
+			<div class="name">{speaker.name}</div>
+			<div class="details">
+				{speaker.qualification && <div>{speaker.qualification}</div>}
+				{speaker.role && <div>{speaker.role}</div>}
+			</div>
+		</a>
+		<BioLinks name={speaker.name} links={speaker.links} />
+	</div>
+</li>
+
+<style>
+	.speaker {
+		align-items: center;
+		display: flex;
+		gap: 1rem;
+		text-align: left;
+	}
+
+	.speaker-image {
+		border-radius: 100%;
+		height: var(--imageSize);
+		width: var(--imageSize);
+	}
+
+	.speaker-text {
+		display: flex;
+		flex-direction: column;
+		gap: 0.75rem;
+	}
+
+	.speaker-text-links {
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		gap: 0.5rem;
+		text-decoration: none;
+	}
+
+	.name {
+		color: var(--colorForegroundBody);
+		font-size: var(--fontSizeH4);
+		display: flex;
+		line-height: 0.9em;
+	}
+
+	.details {
+		font-size: var(--fontSizeBodySmaller);
+		font-weight: var(--fontWeightLight);
+		display: flex;
+		gap: 0.25rem;
+		flex-direction: column;
+	}
+</style>

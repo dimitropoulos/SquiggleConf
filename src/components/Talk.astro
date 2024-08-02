@@ -6,6 +6,7 @@ import TalkTag from "./TalkTag.astro";
 import TalkFormat from "./TalkFormat.astro";
 import TalkDiscord from "./TalkDiscord.astro";
 import { TalkInfo } from "~/data/talks";
+import Speaker from "./Speaker.astro";
 
 interface Props {
 	talk: TalkInfo;
@@ -13,7 +14,7 @@ interface Props {
 
 const {
 	// links,
-	talk: { title, speakers, tags, talkFormat, description, discordChannel },
+	talk: { title, speakers, tags, talkFormat, description, slug },
 	...rest
 } = Astro.props;
 ---
@@ -27,27 +28,18 @@ const {
 		<div class="description">{description}</div>
 	</div>
 
-	<div class="speakers">
-		{
-			speakers.map((speaker) => (
-				<div class="speaker">
-					<div class="speaker-image-container">
-						<Image alt="" class="speaker-image" src={speaker.avatar} />
-					</div>
-					<div class="speaker-text">
-						<div class="name">{speaker.name}</div>
-						<div class="position">{speaker.qualification}</div>
-						<div class="position">{speaker.role}</div>
-						<BioLinks name={speaker.name} links={speaker.links} />
-					</div>
-				</div>
-			))
-		}
-	</div>
-
 	<div class="talks-details">
-		<TalkDiscord discord={discordChannel} />
-		<TalkFormat format={talkFormat} />
+		<ul class="speakers">
+			{
+				speakers.map((speaker) => (
+					<Speaker href={`#${slug}`} speaker={speaker} />
+				))
+			}
+		</ul>
+		<div class="talks-details-links">
+			<TalkDiscord discord={slug} />
+			<TalkFormat format={talkFormat} />
+		</div>
 	</div>
 
 	<style>
@@ -57,13 +49,12 @@ const {
 			flex-direction: column;
 			font-family: var(--fontFamilyBody);
 			gap: 0.5rem;
-			width: 100%;
+			margin-top: 1rem;
 		}
 
 		.speaker {
 			margin-left: 1rem;
 			margin-right: 1rem;
-			maring-top: 1rem;
 			display: flex;
 			flex-direction: row;
 			align-items: center;
@@ -104,8 +95,7 @@ const {
 			border: 1px solid white;
 			padding: 1rem;
 			border-radius: 0.5rem;
-			min-width: 700px;
-			max-width: 40vw;
+			max-width: var(--widthBodyFull);
 			--imageSize: clamp(3.5rem, 10vw, 6rem);
 			--fontSize: var(--fontSizeBodySmaller);
 			background-color: var(--colorBackdropLight);
@@ -132,9 +122,15 @@ const {
 		.talks-details {
 			display: flex;
 			flex-direction: row;
-			justify-content: flex-end;
+			align-items: flex-end;
+			justify-content: space-between;
 			width: 100%;
-			align-items: center;
+		}
+
+		.talks-details-links {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-end;
 		}
 
 		.name {
@@ -146,12 +142,9 @@ const {
 		.description {
 			color: var(--colorForegroundBody);
 			margin-top: 0.5rem;
+			line-height: 1.25em;
 			margin-bottom: 0.5rem;
 			text-align: left;
-			display: -webkit-box;
-			-webkit-line-clamp: 3;
-			-webkit-box-orient: vertical;
-			text-overflow: ellipsis;
 			overflow: hidden;
 		}
 
