@@ -4,22 +4,46 @@ import HeroForPage from "~/components/HeroForPage.astro";
 import PrimaryContents from "~/components/PrimaryContents.astro";
 import { talks } from "~/data/talks";
 import Talk from "~/components/Talk.astro";
+import BodyText from "~/components/BodyText.astro";
 ---
 
 <ContentLayout>
 	<HeroForPage>Talks</HeroForPage>
 
 	<PrimaryContents>
+		<BodyText as="p" class="talks-body-text" size="large" width="lean">
+			Meet the developers around the Go, TypeScript, Rust, and Zig tools that
+			make the squiggles you depend on every day.
+		</BodyText>
+
+		<BodyText as="p" class="talks-body-text" size="large" width="lean">
+			Talks are scheduled for all day Thursday, October 3rd.
+		</BodyText>
+
 		<ul class="talks-list">
 			{talks.map((talk) => <Talk talk={talk} />)}
 		</ul>
+
+		<BodyText as="p" class="talks-body-text" size="large" width="lean">
+			You’ll emerge with the best techniques to supercharge your projects —
+			whether you’re already a tooling wizard or trying to become one.
+		</BodyText>
+
+		<BodyText as="p" class="talks-body-text" size="large" width="lean">
+			Talks are scheduled for all day Thursday, October 3rd.
+		</BodyText>
 	</PrimaryContents>
 </ContentLayout>
 
 <style>
+	.talks-body-text + .talks-body-text {
+		margin-top: 2rem;
+	}
+
 	.talks-list {
 		display: flex;
 		flex-direction: column;
 		gap: 2rem;
+		margin: 4rem 2rem;
 	}
 </style>

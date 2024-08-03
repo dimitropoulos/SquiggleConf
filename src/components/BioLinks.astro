@@ -10,6 +10,7 @@ import website from "~/assets/website.svg";
 import youtube from "~/assets/youtube.svg";
 
 interface Props {
+	class?: string;
 	links: BioLinksPlatforms;
 	name: string;
 }
@@ -24,10 +25,10 @@ export interface BioLinksPlatforms {
 	youtube?: string | null;
 }
 
-const { links, name } = Astro.props;
+const { class: className, links, name, ...rest } = Astro.props;
 ---
 
-<div class="bio-links">
+<div class:list={["bio-links", className]} {...rest}>
 	{
 		links.github && (
 			<a href={links.github} target="_blank" rel="noreferrer">
