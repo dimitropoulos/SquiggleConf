@@ -1,5 +1,5 @@
 in a hurry - so taking notes here.
 
+- need hover style on anchor tags
 - markdown rendering
-  - styling for descriptions (i.e. ul/li)
   - role or qualifications links need to open a new tab

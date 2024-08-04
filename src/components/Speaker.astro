@@ -13,7 +13,7 @@ interface Props {
 
 const { class: className, person: speaker, ...rest } = Astro.props;
 
-const image = import(`/src/assets/avatars/${speaker.slug}.jpg`);
+const image = import(`../assets/avatars/${speaker.slug}.jpg`);
 ---
 
 <li class:list={["speaker", className]} {...rest}>
