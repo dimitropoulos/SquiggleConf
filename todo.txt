@@ -1,0 +1,9 @@
+in a hurry - so taking notes here.
+
+- need twitch logo
+- need to fix youtube logo sizing
+- need to be able to click role or qualification link on main page
+- role or qualifications links need to open a new tab
+- language soup
+- hover on links
+- fix TagLine.astro

@@ -1,16 +1,25 @@
-import bluesky from "~/assets/bluesky.svg";
-import discord from "~/assets/discord.svg";
-import github from "~/assets/github.svg";
-import linkedin from "~/assets/linkedin.svg";
-import mastodon from "~/assets/mastodon.svg";
+import youtube from "~/assets/logos/YouTube.svg";
+import bluesky from "~/assets/logos/bluesky.svg";
+import discord from "~/assets/logos/discord.svg";
+import github from "~/assets/logos/github.svg";
+import linkedin from "~/assets/logos/linkedin.svg";
+import mastodon from "~/assets/logos/mastodon.svg";
+import twitter from "~/assets/logos/twitter.svg";
 import inngestBlack from "~/assets/sponsors/inngest-black.svg";
 import openjsFoundationColor from "~/assets/sponsors/openjs-foundation-color.svg";
-import twitter from "~/assets/twitter.svg";
+import * as notionData from "~/data/notion-data";
+
+export type {
+	SpeakerInfo,
+	SpeakerLinks,
+	TalkFormat,
+	TalkInfo,
+} from "~/data/notion-data";
 
 export const links = {
 	scholarship: "https://forms.gle/pnoAmVgijk3p4j5C7",
-	tickets: "https://buytickets.at/squiggleconf/1249793/r/website",
-	volunteer: "https://forms.gle/YfRvmSPBMpGe3T2g9",
+	tickets: "https://ticket.squiggleconf.com",
+	volunteer: "https://volunteer.squiggleconf.com",
 };
 
 export const sponsors = [
@@ -26,7 +35,7 @@ export const sponsors = [
 	},
 ];
 
-const socials = [
+export const locations = [
 	{
 		alt: "Bluesky",
 		href: "https://bsky.app/profile/squiggleconf.com",
@@ -47,10 +56,11 @@ const socials = [
 		href: "https://twitter.com/SquiggleConf",
 		src: twitter,
 	},
-];
-
-export const locations = [
-	...socials,
+	{
+		alt: "YouTube",
+		href: "https://www.youtube.com/@SquiggleConf",
+		src: youtube,
+	},
 	{
 		alt: "GitHub",
 		href: "https://www.github.com/SquiggleTools/SquiggleConf",
@@ -62,3 +72,38 @@ export const locations = [
 		src: discord,
 	},
 ].sort((a, b) => a.alt.localeCompare(b.alt));
+
+type TalkSlug = keyof typeof notionData.talks;
+
+const talksToExclude: TalkSlug[] = [
+	// "workshop-katerina-and-max",
+	// "workshop-sylwia-vargas",
+];
+
+const sortOrder: TalkSlug[] = [
+	"talk-aakansha-doshi",
+	"talk-chris-griffing",
+	"talk-corina-murg",
+	"talk-dan-vanderkam",
+	"talk-don-isaac",
+	"talk-jess-lin",
+	"talk-laurynas-keturakis",
+	"talk-loris-cro",
+	"talk-rachel-nabors",
+	"talk-rick-viscomi",
+	"talk-rizel-scarlett",
+	"talk-robby-russell",
+	"talk-titian-cernicova-dragomir",
+	"talk-yagiz-nizipli",
+	"workshop-katerina-and-max",
+	"workshop-sylwia-vargas",
+];
+
+// sorty by sortOrder
+export const talks = Object.values(notionData.talks)
+	.filter((t) => !talksToExclude.includes(t.slug as TalkSlug))
+	.sort((a, b) => {
+		const aIndex = sortOrder.indexOf(a.slug as TalkSlug);
+		const bIndex = sortOrder.indexOf(b.slug as TalkSlug);
+		return aIndex - bIndex;
+	});

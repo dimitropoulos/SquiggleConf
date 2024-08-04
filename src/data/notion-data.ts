@@ -10,7 +10,6 @@ export interface SpeakerLinks {
 }
 
 export interface SpeakerInfo {
-	avatar: Promise<typeof import("*.jpg")>;
 	bio: null | string;
 	links: SpeakerLinks;
 	name: string;
@@ -23,7 +22,6 @@ type Speakers = Record<string, SpeakerInfo>;
 
 export const speakers = {
 	"aakansha-doshi": {
-		avatar: import("~/assets/avatars/aakansha-doshi.jpg"),
 		bio: "",
 		links: {
 			bluesky: null,
@@ -36,12 +34,11 @@ export const speakers = {
 			youtube: null,
 		},
 		name: "Aakansha Doshi",
-		qualification: "Core Excalidraw Maintainer",
+		qualification: "Core [Excalidraw](https://excalidraw.com/) Maintainer",
 		role: "Open Source Maintainer",
 		slug: "aakansha-doshi",
 	},
 	"chris-griffing": {
-		avatar: import("~/assets/avatars/chris-griffing.jpg"),
 		bio: "",
 		links: {
 			bluesky: null,
@@ -55,11 +52,10 @@ export const speakers = {
 		},
 		name: "Chris Griffing",
 		qualification: "Extism Author",
-		role: "Axosoft (GitKraken, GitLens)",
+		role: "[Axosoft](https://www.axosoft.com/) \\( [GitKraken](https://www.gitkraken.com/), [GitLens](https://www.gitkraken.com/gitlens) \\)",
 		slug: "chris-griffing",
 	},
 	"corina-murg": {
-		avatar: import("~/assets/avatars/corina-murg.jpg"),
 		bio: "",
 		links: {
 			bluesky: null,
@@ -73,16 +69,15 @@ export const speakers = {
 		},
 		name: "Corina Murg",
 		qualification: "Accessibility Engineer",
-		role: "Founder, Web for Everyone",
+		role: "Founder, [Web for Everyone](https://webforeveryone.us/)",
 		slug: "corina-murg",
 	},
 	"dan-vanderkam": {
-		avatar: import("~/assets/avatars/dan-vanderkam.jpg"),
 		bio: "",
 		links: {
 			bluesky: null,
-			github: null,
-			linkedin: null,
+			github: "https://github.com/danvk",
+			linkedin: "https://www.linkedin.com/in/danvk",
 			mastodon: null,
 			twitch: null,
 			twitter: "https://x.com/danvdk",
@@ -91,11 +86,10 @@ export const speakers = {
 		},
 		name: "Dan Vanderkam",
 		qualification: "TypeScript Compiler Contributor",
-		role: "Effective TypeScript Author",
+		role: "[Effective TypeScript](https://effectivetypescript.com/) Author",
 		slug: "dan-vanderkam",
 	},
 	"don-isaac": {
-		avatar: import("~/assets/avatars/don-isaac.jpg"),
 		bio: "My name is Don, and I work on next-gen tooling for finding incorrect code both statically and dynamically. I currently work on both Oxc and an autonomous UI testing agent, and have been writing code for over 10 years.",
 		links: {
 			bluesky: null,
@@ -108,13 +102,13 @@ export const speakers = {
 			youtube: null,
 		},
 		name: "Don Isaac",
-		qualification: "Oxc Maintainer",
+		qualification:
+			"[JavaScript Oxidation Compiler](https://oxc.rs/) Maintainer",
 		role: "",
 		slug: "don-isaac",
 	},
 	"jess-lin": {
-		avatar: import("~/assets/avatars/jess-lin.jpg"),
-		bio: 'I\'ve been a software engineer for a decade. I first worked on an open source IDE at Facebook in 2013; then moved to ads at Pinterest, collaboration tools at Stripe, and absolutely everything at Instabase when it was only 5 people. In recent years, I\'ve enjoyed roles that bring me close to users, first as a deployed engineer at Retool and now as a devrel at Render.On software teams, I\'ve always found myself helping colleagues communicate their technical ideas. With my background, I can help engineers efficiently and with a lot of empathy. I’ve produced, written, and ghostwritten successful tech blog posts that have hit the front page of Hacker News and been featured in prominent newsletters.This talk came out of a colleague at Render asking me to explain all the edits I made to his posts (he could see the "what" but not the "why")—and SquiggleConf is the perfect excuse to sit down and explain!',
+		bio: 'I\'ve been a software engineer for a decade. I first worked on an open source IDE at Facebook in 2013; then moved to ads at Pinterest, collaboration tools at Stripe, and absolutely everything at Instabase when it was only 5 people. In recent years, I\'ve enjoyed roles that bring me close to users, first as a deployed engineer at Retool and now as a devrel at Render.On software teams, I\'ve always found myself helping colleagues communicate their technical ideas. With my background, I can help engineers efficiently and with a lot of empathy. I’ve produced, written, and ghostwritten successful tech blog posts that have hit the front page of Hacker News and been featured in prominent newsletters.This talk came out of a colleague at Render asking me to explain all the edits I made to his posts \\( he could see the "what" but not the "why" \\)—and SquiggleConf is the perfect excuse to sit down and explain!',
 		links: {
 			bluesky: null,
 			github: "https://github.com/jssln",
@@ -127,11 +121,10 @@ export const speakers = {
 		},
 		name: "Jess Lin",
 		qualification: "Software Engineer & Technical Writer",
-		role: "DevRel, Render",
+		role: "DevRel, [Render](https://render.com/)",
 		slug: "jess-lin",
 	},
 	"katerina-skroumpelou": {
-		avatar: import("~/assets/avatars/katerina-skroumpelou.jpg"),
 		bio: "",
 		links: {
 			bluesky: null,
@@ -149,7 +142,6 @@ export const speakers = {
 		slug: "katerina-skroumpelou",
 	},
 	"laurynas-keturakis": {
-		avatar: import("~/assets/avatars/laurynas-keturakis.jpg"),
 		bio: "",
 		links: {
 			bluesky: "https://bsky.app/profile/laurynas.cc",
@@ -162,12 +154,11 @@ export const speakers = {
 			youtube: null,
 		},
 		name: "Laurynas Keturakis",
-		qualification: "Autometics Maintainer",
-		role: "Developer, Fiberplane",
+		qualification: "[Autometics](https://autometrics.dev/) Maintainer",
+		role: "Developer, [Fiberplane](https://fiberplane.com/)",
 		slug: "laurynas-keturakis",
 	},
 	"loris-cro": {
-		avatar: import("~/assets/avatars/loris-cro.jpg"),
 		bio: "",
 		links: {
 			bluesky: null,
@@ -181,11 +172,10 @@ export const speakers = {
 		},
 		name: "Loris Cro",
 		qualification: "Zig Livecoder",
-		role: "VP Community, Zig Software Foundation",
+		role: "VP Community, [Zig Software Foundation](https://ziglang.org/zsf/)",
 		slug: "loris-cro",
 	},
 	"max-kless": {
-		avatar: import("~/assets/avatars/max-kless.jpg"),
 		bio: "",
 		links: {
 			bluesky: null,
@@ -203,7 +193,6 @@ export const speakers = {
 		slug: "max-kless",
 	},
 	"rachel-nabors": {
-		avatar: import("~/assets/avatars/rachel-nabors.jpg"),
 		bio: "Rachel Lee Nabors has led developer education at FAANG companies and startups. They've participated in browser development, web animation standards and open source with Mozilla, W3C, and Microsoft and wrote “Animation at Work.” Most recently, they built award-winning React and React Native dev portals at Meta. Currently, they live in London, writing a book on how to survive your tech career.",
 		links: {
 			bluesky: null,
@@ -221,7 +210,6 @@ export const speakers = {
 		slug: "rachel-nabors",
 	},
 	"rick-viscomi": {
-		avatar: import("~/assets/avatars/rick-viscomi.jpg"),
 		bio: "I'm a web performance engineer working on the Chrome Web DevRel team at Google, where my mission is to make the web faster. My role is to promote web performance best practices to help developers succeed with Core Web Vitals, and a major part of that is giving developers the right tools to measure and debug slow user experiences. I'm currently working closely with the Chrome DevTools team on the next generation Performance panel, and since 2017 I've been working on the Chrome UX Report, a public dataset of real-world performance data from millions of websites. I've also built several tools including the Core Web Vitals Technology Report and the CrUX Dashboard to help developers track performance and discover opportunities for improvement, and I co-wrote Using WebPageTest, a book about the web performance testing tool.",
 		links: {
 			bluesky: null,
@@ -234,30 +222,28 @@ export const speakers = {
 			youtube: "https://www.youtube.com/@RickViscomi",
 		},
 		name: "Rick Viscomi",
-		qualification: "Chrome Team, Google",
+		qualification: "[Chrome](https://www.google.com/chrome/) Team, Google",
 		role: "Web Performance DevRel",
 		slug: "rick-viscomi",
 	},
 	"rizel-scarlett": {
-		avatar: import("~/assets/avatars/rizel-scarlett.jpg"),
-		bio: "",
+		bio: "I am a Staff Developer Advocate at TBD, Block's newest business unit. At TBD, we're shifting the paradigm by converting open standards into open source SDKs that make cross border payments and data ownership more accessible for users. I'm responsible for helping people understand how to use the SDKs through documentation, content creation, conference talks, and practical code examples. With a diverse background spanning GitHub, startups, and non-profit organizations, I have cultivated a passion for utilizing emerging technologies to champion equity within the tech industry. I moonlight as an Advisor at G{Code} House, an organization aimed at teaching women of color and non-binary people of color to code. I believe in leveraging vulnerability, honesty, and kindness as means to educate early-career developers.",
 		links: {
 			bluesky: null,
 			github: "https://github.com/blackgirlbytes",
-			linkedin: null,
-			mastodon: null,
+			linkedin: "https://linkedin.com/in/rizel-bobb-semple",
+			mastodon: "https://hachyderm.io/@blackgirlbytes",
 			twitch: null,
 			twitter: "https://x.com/blackgirlbytes",
 			website: null,
 			youtube: null,
 		},
-		name: "Rizel Scarlett",
+		name: "Rizèl Scarlett",
 		qualification: "",
-		role: "Staff Developer Advocate, TBD",
+		role: "Staff Developer Advocate, [TBD](https://developer.tbd.website/)",
 		slug: "rizel-scarlett",
 	},
 	"robby-russell": {
-		avatar: import("~/assets/avatars/robby-russell.jpg"),
 		bio: "Hi, I'm Robby Russell, the creator of Oh My Zsh, one of the most popular open-source projects on GitHub with nearly 2,400 contributors. As I reflect on the 15th anniversary of its release, I remember creating Oh My Zsh to scratch a selfish itch within my small team, never anticipating its widespread adoption. By attending my talk, you'll gain a deeper understanding of why it became successful, learn from the unexpected journey, and discover valuable lessons that can help you in your own projects.",
 		links: {
 			bluesky: null,
@@ -270,12 +256,11 @@ export const speakers = {
 			youtube: null,
 		},
 		name: "Robby Russell",
-		qualification: "Oh My Zsh Creator",
-		role: "CEO, Planet Argon",
+		qualification: "[Oh My Zsh](https://ohmyz.sh/) Creator",
+		role: "CEO, [Planet Argon](https://www.planetargon.com/)",
 		slug: "robby-russell",
 	},
 	"sylwia-vargas": {
-		avatar: import("~/assets/avatars/sylwia-vargas.jpg"),
 		bio: "",
 		links: {
 			bluesky: null,
@@ -293,12 +278,11 @@ export const speakers = {
 		slug: "sylwia-vargas",
 	},
 	"titian-cernicova-dragomir": {
-		avatar: import("~/assets/avatars/titian-cernicova-dragomir.jpg"),
 		bio: "",
 		links: {
 			bluesky: null,
 			github: "https://github.com/dragomirtitian",
-			linkedin: null,
+			linkedin: "https://uk.linkedin.com/in/titian-cernicova-dragomir-2b37457a",
 			mastodon: null,
 			twitch: null,
 			twitter: "https://x.com/TitianCernicova",
@@ -307,12 +291,11 @@ export const speakers = {
 		},
 		name: "Titian Cernicova-Dragomir",
 		qualification: "TypeScript Compiler Contributor",
-		role: "Software Engineer, Bloomberg",
+		role: "Software Engineer, [Bloomberg](https://www.bloomberg.com/)",
 		slug: "titian-cernicova-dragomir",
 	},
 	"yagiz-nizipli": {
-		avatar: import("~/assets/avatars/yagiz-nizipli.jpg"),
-		bio: "",
+		bio: "I’m Yagiz Nizipli. I’m a Node.js Technical Steering committee member, and a Principal Systems Engineer at Cloudflare. With a deep passion for performance optimization, I’ve made significant improvements to Node.js performance by having more than 250+ contributions. I’ve written several tools such as “node —run” and “node —env-file”. I’m also the author of Ada URL Parser, the implementation used by Node.js and Cloudflare workers.",
 		links: {
 			bluesky: null,
 			github: "https://github.com/anonrig",
@@ -320,12 +303,12 @@ export const speakers = {
 			mastodon: null,
 			twitch: null,
 			twitter: "https://x.com/yagiznizipli",
-			website: null,
+			website: "yagiz.co",
 			youtube: null,
 		},
 		name: "Yagiz Nizipli",
-		qualification: "Node.JS TSC Member",
-		role: "Principal Systems Engineer, Cloudflare",
+		qualification: "[Node.JS TSC](https://github.com/nodejs/TSC) Member",
+		role: "Principal Systems Engineer, [Cloudflare](https://www.cloudflare.com/)",
 		slug: "yagiz-nizipli",
 	},
 } satisfies Speakers;
@@ -344,7 +327,7 @@ export interface TalkInfo {
 export const talks = {
 	"talk-aakansha-doshi": {
 		description:
-			"How do we manipulate pixels in a DOM-oriented world? HTML <canvas>! I recently built Excalidraw’s ‘labeled arrows’ feature, which heavily utilizes all sorts of Canvas element JavaScript APIs for rich graphics and media display in web browsers. Let’s dig in to see how Canvas and Excalidraw work under the hood!\n\nI’ll cover with demos:\n- Why labeled arrows were built: including the ‘how’ and ‘why’ of design decisions\n- The architecture of how elements are structured and how text is tied to the arrow\n- Rendering arrows in canvas, including multi-point arrows and transparency effects\n- How Canvas and SVG compare & contrast with mask attributes, clipping, and clearRect\n- Performance optimizations such as caching labeled repeat computational and graphics work\n\nThe audience will come away understanding how Canvas APIs work together - along with how labeled arrows were implemented in Excalidraw.",
+			"How do we manipulate pixels in a DOM-oriented world? HTML canvas! I recently built Excalidraw’s ‘labeled arrows’ feature, which heavily utilizes all sorts of Canvas element JavaScript APIs for rich graphics and media display in web browsers. Let’s dig in to see how Canvas and Excalidraw work under the hood!\n\nI’ll cover with demos:\n- Why labeled arrows were built: including the ‘how’ and ‘why’ of design decisions\n- The architecture of how elements are structured and how text is tied to the arrow\n- Rendering arrows in canvas, including multi-point arrows and transparency effects\n- How Canvas and SVG compare & contrast with mask attributes, clipping, and clearRect\n- Performance optimizations such as caching labeled repeat computational and graphics work\n\nThe audience will come away understanding how Canvas APIs work together - along with how labeled arrows were implemented in Excalidraw.",
 		slug: "talk-aakansha-doshi",
 		speakers: [speakers["aakansha-doshi"]],
 		tags: ["Canvas", "SVG", "Performance"],
@@ -354,7 +337,7 @@ export const talks = {
 
 	"talk-chris-griffing": {
 		description:
-			"How awesome would it be if anyone could write plugins in any language that interop with your application regardless of your stack? Introducing Extism: a powerful plugin system that allows you to integrate WASM code into your servers, the edge, CLIs, IoT, browsers and everything in between.\n\nThe talk will start out with a history of WASM and it's predecessor (asm.js). We will even point out Gary Bernhardt's ‘Birth and Death of JavaScript’ presentation and how it seems to have predicted where WASM could go. After understanding WASM and its history, we will outline what Extism is, how it can be used, as well as some real-world examples of its usage.",
+			"How awesome would it be if anyone could write plugins in any language that interop with your application regardless of your stack? Introducing Extism: a powerful plugin system that allows you to integrate WASM code into your servers, the edge, CLIs, IoT, browsers and everything in between.\n\nThe talk will start out with a history of WASM and it's predecessor \\( asm.js \\). We will even point out Gary Bernhardt's ‘Birth and Death of JavaScript’ presentation and how it seems to have predicted where WASM could go. After understanding WASM and its history, we will outline what Extism is, how it can be used, as well as some real-world examples of its usage.",
 		slug: "talk-chris-griffing",
 		speakers: [speakers["chris-griffing"]],
 		tags: ["WebAssembly", "Language Soup", "Cross-Language", "Open Source"],
@@ -399,7 +382,7 @@ export const talks = {
 
 	"talk-jess-lin": {
 		description:
-			"Writing a technical blog post may sound like a solo task, but in reality it’s just like good software—best with a writer and reviewer/editor. But what does that process look like, and what’s the role of the editor?\n\nIn this talk, I’ll first show elements of a good versus great blog post, with examples. A good post gets the information across in an orderly fashion. A great blog post starts from great source material, and manages to be a page turner. Sometimes, good is all you need, but it’s useful to recognize when you have the potential for great.\n\nNext, I’ll show real examples of specific edits to blog posts I consider good and great. In general, you need to first edit at the macro level (e.g. throwing out an entire first draft and choosing a completely different angle) and then the micro level (e.g. restructuring sentences for clarity). The title and opening deserve special attention, and I’ll share tactics you can use to write and refine them.\n\nMarketing your software isn’t just for marketers. These techniques will help you in everything from pull request descriptions to release announcements. I’ll use real material from a series of blog posts we published in spring 2024 at Render to show how much of a difference applying editing craft to communications can make.",
+			"Writing a technical blog post may sound like a solo task, but in reality it’s just like good software—best with a writer and reviewer/editor. But what does that process look like, and what’s the role of the editor?\n\nIn this talk, I’ll first show elements of a good versus great blog post, with examples. A good post gets the information across in an orderly fashion. A great blog post starts from great source material, and manages to be a page turner. Sometimes, good is all you need, but it’s useful to recognize when you have the potential for great.\n\nNext, I’ll show real examples of specific edits to blog posts I consider good and great. In general, you need to first edit at the macro level \\( e.g. throwing out an entire first draft and choosing a completely different angle \\) and then the micro level \\( e.g. restructuring sentences for clarity \\). The title and opening deserve special attention, and I’ll share tactics you can use to write and refine them.\n\nMarketing your software isn’t just for marketers. These techniques will help you in everything from pull request descriptions to release announcements. I’ll use real material from a series of blog posts we published in spring 2024 at Render to show how much of a difference applying editing craft to communications can make.",
 		slug: "talk-jess-lin",
 		speakers: [speakers["jess-lin"]],
 		tags: [
@@ -414,7 +397,7 @@ export const talks = {
 
 	"talk-laurynas-keturakis": {
 		description:
-			"Traces showing function-by-function (span-by-span) execution are incredibly useful for production code debugging work. Yet, many organizations adopt traces late in the development cycle. Code already running in production tends to settle and be harder to change based on late-breaking findings.\n\nThis talk will take you from tracing trepidation to total tracing glory. We’ll cover the benefits of tracing, some of the challenges of integrating it into new or existing apps, and the lovely visibility benefits you get from a well-traced applications.",
+			"Traces showing function-by-function \\( span-by-span \\) execution are incredibly useful for production code debugging work. Yet, many organizations adopt traces late in the development cycle. Code already running in production tends to settle and be harder to change based on late-breaking findings.\n\nThis talk will take you from tracing trepidation to total tracing glory. We’ll cover the benefits of tracing, some of the challenges of integrating it into new or existing apps, and the lovely visibility benefits you get from a well-traced applications.",
 		slug: "talk-laurynas-keturakis",
 		speakers: [speakers["laurynas-keturakis"]],
 		tags: ["Tracing", "Debugging", "Open Telemetry"],
@@ -424,7 +407,7 @@ export const talks = {
 
 	"talk-loris-cro": {
 		description:
-			"Have you ever started a simple project, wanted something to exist, and ended up spending all your time building it yourself? I recently went from building static sites, to building my own static site generator, to writing a new HTML parser and then language server from scratch.\n\nThis talk will guide you through that process of how my yak-shaving stack evolved over time, staring with using TreeSitter as a parser, and culminating in the [Zine](https://zine-ssg.io) static site generator and [SuperHTML](https://github.com/kristoff-it/superhtml) language server. We’ll cover both why those things are useful and how they actually work under the hood.\n\nBy the end of this talk, you will have concluded I’m a maniac, or you will have developed your own appreciation for occasionally building things from scratch. Likely both.",
+			"Have you ever started a simple project, wanted something to exist, and ended up spending all your time building it yourself? I recently went from building static sites, to building my own static site generator, to writing a new HTML parser and then language server from scratch.\n\nThis talk will guide you through that process of how my yak-shaving stack evolved over time, staring with using TreeSitter as a parser, and culminating in the [Zine]\\( https://zine-ssg.io \\) static site generator and [SuperHTML]\\( https://github.com/kristoff-it/superhtml \\) language server. We’ll cover both why those things are useful and how they actually work under the hood.\n\nBy the end of this talk, you will have concluded I’m a maniac, or you will have developed your own appreciation for occasionally building things from scratch. Likely both.",
 		slug: "talk-loris-cro",
 		speakers: [speakers["loris-cro"]],
 		tags: ["Zig", "Language Server Protocol", "TreeSitter", "Parsing"],
@@ -459,7 +442,7 @@ export const talks = {
 
 	"talk-rizel-scarlett": {
 		description:
-			"Sigh, your docs are broken and outdated. But here's the good news: they don’t have to be!\n\nDocumentation is a reflection of the quality of your dev tooling, so if it's broken and outdated that sets the tone for your product's reputation. I empathize with you: as your tooling constantly evolves, keeping documentation up-to-date is challenging, especially when managing multiple programming languages. You already have so much going on. Docs are important, and your time is too.\n\nJoin Rizèl for a session on working smarter (and not harder) with practical techniques for integrating documentation into your development workflows. Rizèl will share how to efficiently treat your developer docs as code to ensure your documentation remains reliable and current.",
+			"Sigh, your docs are broken and outdated. But here's the good news: they don’t have to be!\n\nDocumentation is a reflection of the quality of your dev tooling, so if it's broken and outdated that sets the tone for your product's reputation. I empathize with you: as your tooling constantly evolves, keeping documentation up-to-date is challenging, especially when managing multiple programming languages. You already have so much going on. Docs are important, and your time is too.\n\nJoin Rizèl for a session on working smarter \\( and not harder \\) with practical techniques for integrating documentation into your development workflows. Rizèl will share how to efficiently treat your developer docs as code to ensure your documentation remains reliable and current.",
 		slug: "talk-rizel-scarlett",
 		speakers: [speakers["rizel-scarlett"]],
 		tags: ["Developer Relations", "Community Building", "Documentation"],
@@ -502,10 +485,10 @@ export const talks = {
 		title: "Node.js Core Performance Optimizations, Revealed",
 	},
 
-	"workshop-max-and-katerina": {
+	"workshop-katerina-and-max": {
 		description: "",
-		slug: "workshop-max-and-katerina",
-		speakers: [speakers["max-kless"], speakers["katerina-skroumpelou"]],
+		slug: "workshop-katerina-and-max",
+		speakers: [speakers["katerina-skroumpelou"], speakers["max-kless"]],
 		tags: ["Editor Extensions", "TypeScript", "Language Server Protocol"],
 		talkFormat: "Workshop",
 		title: "build a VS Code extension with the makers of Nx Console",

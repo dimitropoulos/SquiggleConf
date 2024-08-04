@@ -1,13 +1,13 @@
 ---
 import { Image } from "astro:assets";
 
-import bluesky from "~/assets/bluesky.svg";
-import github from "~/assets/github.svg";
-import linkedin from "~/assets/linkedin.svg";
-import mastodon from "~/assets/mastodon.svg";
-import twitter from "~/assets/twitter.svg";
-import website from "~/assets/website.svg";
-import youtube from "~/assets/youtube.svg";
+import bluesky from "~/assets/logos/bluesky.svg";
+import github from "~/assets/logos/github.svg";
+import linkedin from "~/assets/logos/linkedin.svg";
+import mastodon from "~/assets/logos/mastodon.svg";
+import twitter from "~/assets/logos/twitter.svg";
+import website from "~/assets/logos/website.svg";
+import youtube from "~/assets/logos/YouTube.svg";
 
 interface Props {
 	class?: string;
@@ -65,19 +65,20 @@ const { class: className, links, name, ...rest } = Astro.props;
 		)
 	}
 	{
-		links.website && (
-			<a href={links.website} target="_blank" rel="noreferrer">
-				<Image alt={`${name}'s website'`} class="link" src={website} />
-			</a>
-		)
-	}
-	{
 		links.youtube && (
 			<a href={links.youtube} target="_blank" rel="noreferrer">
 				<Image alt={`${name} on YouTube'`} class="link" src={youtube} />
 			</a>
 		)
 	}
+	{
+		links.website && (
+			<a href={links.website} target="_blank" rel="noreferrer">
+				<Image alt={`${name}'s website'`} class="link" src={website} />
+			</a>
+		)
+	}
+	<!-- TODO: Twitch -->
 </div>
 
 <style>

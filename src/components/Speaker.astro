@@ -1,8 +1,9 @@
 ---
 import { Image } from "astro:assets";
 
-import { SpeakerInfo } from "~/data/speakers";
+import { type SpeakerInfo } from "~/data";
 import BioLinks from "./BioLinks.astro";
+import { Markdown } from "@astropub/md";
 
 interface Props {
 	class?: string;
@@ -11,24 +12,32 @@ interface Props {
 }
 
 const { class: className, speaker, ...rest } = Astro.props;
+
+const image = import(`/src/assets/avatars/${speaker.slug}.jpg`);
 ---
 
 <li class:list={["speaker", className]} {...rest}>
 	<div class="speaker-image-container">
-		<Image
-			alt=""
-			class="speaker-image"
-			src={speaker.avatar}
-			width={128}
-			height={128}
-		/>
+		<Image alt="" class="speaker-image" src={image} width={128} height={128} />
 	</div>
 	<div class="speaker-text">
 		<a class="speaker-text-links" href={Astro.props.href}>
 			<div class="name">{speaker.name}</div>
 			<div class="details">
-				{speaker.qualification && <div>{speaker.qualification}</div>}
-				{speaker.role && <div>{speaker.role}</div>}
+				{
+					speaker.qualification && (
+						<div>
+							<Markdown.Inline of={speaker.qualification} />
+						</div>
+					)
+				}
+				{
+					speaker.role && (
+						<div>
+							<Markdown.Inline of={speaker.role} />
+						</div>
+					)
+				}
 			</div>
 		</a>
 		<BioLinks

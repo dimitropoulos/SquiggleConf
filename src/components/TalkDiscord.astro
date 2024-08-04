@@ -9,15 +9,15 @@ interface Props {
 const { discord } = Astro.props;
 ---
 
-<div class="discord">
+<a class="discord" href="https://discord.squiggleconf.com">
 	<Image
 		class="image"
 		src={Discord}
-		alt={`discord channel ${Discord}`}
+		alt={`Discord channel ${Discord}`}
 		width={24}
 	/>
 	#{discord}
-</div>
+</a>
 
 <style>
 	.discord {

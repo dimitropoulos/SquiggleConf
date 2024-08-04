@@ -4,7 +4,6 @@ import { Image } from "astro:assets";
 
 import Zig from "~/assets/logos/Zig.svg";
 import VSCode from "~/assets/logos/VSCode.png";
-import CSS from "~/assets/logos/CSS.png";
 import ChromeDevTools from "~/assets/logos/ChromeDevTools.svg";
 import WebAssembly from "~/assets/logos/WebAssembly.svg";
 import OpenTelemetry from "~/assets/logos/OpenTelemetry.png";
@@ -15,10 +14,11 @@ import SVG from "~/assets/logos/SVG.svg";
 import Rust from "~/assets/logos/Rust.svg";
 import Cpp from "~/assets/logos/Cpp.png";
 
-import AST from "~/assets/logos/icon-ast.svg"; // BROKEN
+import AST from "~/assets/logos/icon-mediation.svg";
 import Accessibility from "~/assets/logos/icon-accessibility.svg";
 import Account from "~/assets/logos/icon-account.svg";
 import AnimationIcon from "~/assets/logos/icon-animation.svg";
+import Autoplay from "~/assets/logos/icon-autoplay.svg";
 import Bug from "~/assets/logos/icon-bug.svg";
 import Calculate from "~/assets/logos/icon-calculate.svg";
 import Code from "~/assets/logos/icon-code.svg";
@@ -47,6 +47,7 @@ const whiteStrokeIcons = [
 	Account,
 	AnimationIcon,
 	Bug,
+	Autoplay,
 	Calculate,
 	Code,
 	Diversity,
@@ -75,7 +76,7 @@ const images: Record<string, ImageMetadata> = {
 	"Build Optimization": Handyman,
 	"C++": Cpp,
 	CLIs: Terminal,
-	"CSS Animations Panel": CSS,
+	"CSS Animations Panel": Autoplay,
 	Canvas: Palette,
 	"Chrome DevTools": ChromeDevTools,
 	"Community Building": Diversity,
@@ -140,15 +141,13 @@ const isLight = whiteStrokeIcons.includes(image);
 		display: inline-flex;
 		align-items: center;
 		background-color: var(--colorOffWhite);
-		border: 1px solid var(--colorTextShadow);
 		border-radius: 0.25rem;
+		box-shadow: 0 0 0.125rem var(--colorTextShadow);
 		color: var(--colorWhite);
 		font-size: 1rem;
-		margin-right: 0.25rem;
-		margin-top: 0.25rem;
-		margin-bottom: 0.25rem;
-		padding: 0.25rem;
+		padding: 0.125rem 0.25rem 0.125rem 0.125rem;
 		white-space: nowrap;
+		cursor: default;
 	}
 
 	.light-icon {
@@ -157,6 +156,6 @@ const isLight = whiteStrokeIcons.includes(image);
 	}
 
 	.tag-icon {
-		margin-right: 0.5rem;
+		margin-right: 0.25rem;
 	}
 </style>

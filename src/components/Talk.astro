@@ -1,10 +1,11 @@
 ---
-import { TalkInfo } from "~/data/talks";
+import { type TalkInfo } from "~/data";
 
 import TalkTag from "./TalkTag.astro";
 import TalkFormat from "./TalkFormat.astro";
 import TalkDiscord from "./TalkDiscord.astro";
 import Speaker from "./Speaker.astro";
+import { Markdown } from "@astropub/md";
 
 interface Props {
 	class?: string;
@@ -21,10 +22,12 @@ const {
 <li {...rest} class:list={["talk", className]} id={slug}>
 	<div class="talk-top">
 		<a class="title" href={`#${slug}`}>{title}</a>
+		<div class="description">
+			<Markdown of={description} />
+		</div>
 		<div class="tags">
 			{tags.map((tag) => <TalkTag tag={tag} />)}
 		</div>
-		<div class="description">{description}</div>
 	</div>
 
 	<div class="talk-details">
@@ -57,12 +60,11 @@ const {
 		font-family: var(--fontFamilyBody);
 		justify-content: space-between;
 		max-width: var(--widthBodyFull);
-		padding: 1rem;
+		padding: 1.5rem;
 		scroll-margin-top: 1rem;
 	}
 
 	.talk-top {
-		margin: 0.5rem;
 		display: flex;
 		flex-direction: column;
 		justify-content: flex-start;
@@ -73,7 +75,7 @@ const {
 		font-size: var(--fontSizeH3);
 		font-weight: var(--fontWeightBold);
 		text-align: left;
-		margin-bottom: 0.75rem;
+		margin-bottom: 0.5rem;
 		text-decoration: none;
 	}
 
@@ -90,6 +92,8 @@ const {
 	.tags {
 		display: flex;
 		flex-wrap: wrap;
+		margin: 0.5rem 0;
+		gap: 0.75rem;
 	}
 
 	.description {
@@ -121,6 +125,23 @@ const {
 		flex-direction: column;
 		font-family: var(--fontFamilyBody);
 		gap: 0.5rem;
-		margin-top: 1rem;
+		margin-top: 1.5rem;
+	}
+
+	//normal ul
+	ul {
+		list-style-type: none;
+		padding: 0;
+	}
+	//normal li
+	li {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		gap: 0.5rem;
+	}
+
+	p {
+		margin: 1rem !important;
 	}
 </style>
