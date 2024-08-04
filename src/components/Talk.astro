@@ -23,7 +23,7 @@ const {
 <li {...rest} class:list={["talk", className]} id={slug}>
 	<div class="talk-top">
 		<a class="title" href={`#${slug}`}>{title}</a>
-		<div class="description">
+		<div class="talk-description">
 			<Markdown of={description} />
 		</div>
 		<div class="tags">
@@ -98,7 +98,7 @@ const {
 		gap: 0.75rem;
 	}
 
-	.description {
+	.talk-description {
 		color: var(--colorForegroundBody);
 		margin-top: 0.5rem;
 		line-height: 1.25em;
@@ -128,19 +128,7 @@ const {
 		font-family: var(--fontFamilyBody);
 		gap: 2rem;
 		margin-top: 1.5rem;
-	}
-
-	//normal ul
-	ul {
-		list-style-type: none;
-		padding: 0;
-	}
-	//normal li
-	li {
-		display: flex;
-		flex-direction: row;
-		align-items: center;
-		gap: 0.5rem;
+		padding-left: 0;
 	}
 
 	p {
