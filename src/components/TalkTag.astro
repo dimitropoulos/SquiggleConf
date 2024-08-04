@@ -2,17 +2,28 @@
 import { ImageMetadata } from "astro";
 import { Image } from "astro:assets";
 
-import Zig from "~/assets/logos/Zig.svg";
-import VSCode from "~/assets/logos/VSCode.png";
 import ChromeDevTools from "~/assets/logos/ChromeDevTools.svg";
-import WebAssembly from "~/assets/logos/WebAssembly.svg";
-import OpenTelemetry from "~/assets/logos/OpenTelemetry.png";
-import TypeScript from "~/assets/logos/TypeScript.svg";
+import C from "~/assets/logos/C.png";
+import Cpp from "~/assets/logos/Cpp.png";
+import Go from "~/assets/logos/Go.svg";
 import JavaScript from "~/assets/logos/JavaScript.png";
 import NodeJSLogo from "~/assets/logos/NodeJS.svg";
-import SVG from "~/assets/logos/SVG.svg";
+import OpenTelemetry from "~/assets/logos/OpenTelemetry.png";
 import Rust from "~/assets/logos/Rust.svg";
-import Cpp from "~/assets/logos/Cpp.png";
+import SVG from "~/assets/logos/SVG.svg";
+import TypeScript from "~/assets/logos/TypeScript.svg";
+import VSCode from "~/assets/logos/VSCode.png";
+import WebAssembly from "~/assets/logos/WebAssembly.svg";
+import Zig from "~/assets/logos/Zig.svg";
+import DotNet from "~/assets/logos/DotNet.svg";
+import Haskell from "~/assets/logos/Haskell.svg";
+import OCaml from "~/assets/logos/OCaml.svg";
+import Java from "~/assets/logos/Java.svg";
+import Perl from "~/assets/logos/Perl.svg";
+import PHP from "~/assets/logos/PHP.svg";
+import Python from "~/assets/logos/Python.svg";
+import Ruby from "~/assets/logos/Ruby.svg";
+import Elixir from "~/assets/logos/Elixir.svg";
 
 import AST from "~/assets/logos/icon-mediation.svg";
 import Accessibility from "~/assets/logos/icon-accessibility.svg";
@@ -71,9 +82,19 @@ const whiteStrokeIcons = [
 ];
 
 const images: Record<string, ImageMetadata> = {
+	".Net": DotNet,
+	Haskell: Haskell,
+	OCaml: OCaml,
+	Java: Java,
+	Perl: Perl,
+	PHP: PHP,
+	Python: Python,
+	Ruby: Ruby,
+	Elixir: Elixir,
 	ASTs: AST,
 	"Accessibility Tree": Accessibility,
 	"Build Optimization": Handyman,
+	C: C,
 	"C++": Cpp,
 	CLIs: Terminal,
 	"CSS Animations Panel": Autoplay,
@@ -92,7 +113,6 @@ const images: Record<string, ImageMetadata> = {
 	"Inclusive Design": Inclusive,
 	JavaScript: JavaScript,
 	"Language Server Protocol": Protocol,
-	// "Language Soup": undefined,
 	"Launching Software Products": Rocket,
 	"Monorepo Tooling": Monorepo,
 	"Node.js": NodeJSLogo,
@@ -110,18 +130,20 @@ const images: Record<string, ImageMetadata> = {
 	"Web Animations API": AnimationIcon,
 	WebAssembly: WebAssembly,
 	Zig: Zig,
+	Go: Go,
 };
 
 interface Props {
 	tag: string;
+	scale?: number;
 }
 
-const { tag } = Astro.props;
+const { tag, scale } = Astro.props;
 const image = images[tag];
 const isLight = whiteStrokeIcons.includes(image);
 ---
 
-<div class="tag-chip">
+<div class="tag-chip" style={{ zoom: scale, alignSelf: "end" }}>
 	{
 		image && (
 			<Image
@@ -157,5 +179,6 @@ const isLight = whiteStrokeIcons.includes(image);
 
 	.tag-icon {
 		margin-right: 0.25rem;
+		max-width: 24px;
 	}
 </style>

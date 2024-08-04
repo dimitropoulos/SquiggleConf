@@ -1,0 +1,34 @@
+---
+import TalkTag from "./TalkTag.astro";
+---
+
+<div class="soup">
+	<TalkTag scale={1} tag="Rust" />
+	<TalkTag scale={0.95} tag="TypeScript" />
+	<TalkTag scale={0.9} tag="Zig" />
+	<TalkTag scale={0.85} tag="Go" />
+	<TalkTag scale={0.8} tag="C++" />
+	<TalkTag scale={0.75} tag="C" />
+	<TalkTag scale={0.7} tag="OCaml" />
+	<TalkTag scale={0.65} tag="Haskell" />
+	<TalkTag scale={0.6} tag="Python" />
+	<TalkTag scale={0.55} tag="Ruby" />
+	<TalkTag scale={0.5} tag="Elixir" />
+	<TalkTag scale={0.4} tag="Java" />
+	<TalkTag scale={0.3} tag=".Net" />
+	<TalkTag scale={0.2} tag="Perl" />
+	<TalkTag scale={0.1} tag="PHP" />
+</div>
+
+<style>
+	.soup {
+		display: contents;
+		flex-wrap: wrap;
+		justify-content: center;
+		margin: 1rem 0;
+	}
+
+	.soup > * {
+		margin: 0.5rem;
+	}
+</style>

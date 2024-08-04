@@ -9,12 +9,7 @@ import inngestBlack from "~/assets/sponsors/inngest-black.svg";
 import openjsFoundationColor from "~/assets/sponsors/openjs-foundation-color.svg";
 import * as notionData from "~/data/notion-data";
 
-export type {
-	SpeakerInfo,
-	SpeakerLinks,
-	TalkFormat,
-	TalkInfo,
-} from "~/data/notion-data";
+export type { Person, TalkFormat, TalkInfo } from "~/data/notion-data";
 
 export const links = {
 	scholarship: "https://forms.gle/pnoAmVgijk3p4j5C7",
@@ -73,7 +68,7 @@ export const locations = [
 	},
 ].sort((a, b) => a.alt.localeCompare(b.alt));
 
-type TalkSlug = keyof typeof notionData.talks;
+type TalkSlug = keyof typeof notionData.talksBySlug;
 
 const talksToExclude: TalkSlug[] = [
 	// "workshop-katerina-and-max",
@@ -100,7 +95,7 @@ const sortOrder: TalkSlug[] = [
 ];
 
 // sorty by sortOrder
-export const talks = Object.values(notionData.talks)
+export const talks = Object.values(notionData.talksBySlug)
 	.filter((t) => !talksToExclude.includes(t.slug as TalkSlug))
 	.sort((a, b) => {
 		const aIndex = sortOrder.indexOf(a.slug as TalkSlug);

@@ -1,27 +1,27 @@
 ---
 import { Image } from "astro:assets";
 
-import { type SpeakerInfo } from "~/data";
+import { type Person } from "~/data";
 import BioLinks from "./BioLinks.astro";
 import { Markdown } from "@astropub/md";
 
 interface Props {
 	class?: string;
 	href: string;
-	speaker: SpeakerInfo;
+	person: Person;
 }
 
-const { class: className, speaker, ...rest } = Astro.props;
+const { class: className, person: speaker, ...rest } = Astro.props;
 
 const image = import(`/src/assets/avatars/${speaker.slug}.jpg`);
 ---
 
 <li class:list={["speaker", className]} {...rest}>
-	<div class="speaker-image-container">
+	<a class="speaker-image-container" href={Astro.props.href}>
 		<Image alt="" class="speaker-image" src={image} width={128} height={128} />
-	</div>
+	</a>
 	<div class="speaker-text">
-		<a class="speaker-text-links" href={Astro.props.href}>
+		<div class="speaker-text-links">
 			<div class="name">{speaker.name}</div>
 			<div class="details">
 				{
@@ -39,7 +39,7 @@ const image = import(`/src/assets/avatars/${speaker.slug}.jpg`);
 					)
 				}
 			</div>
-		</a>
+		</div>
 		<BioLinks
 			class="speaker-bio-links"
 			name={speaker.name}
@@ -75,15 +75,6 @@ const image = import(`/src/assets/avatars/${speaker.slug}.jpg`);
 		justify-content: flex-start;
 		gap: 0.5rem;
 		text-decoration: none;
-	}
-
-	.speaker-text-links::before {
-		bottom: calc(-1.1 * var(--cardPadding));
-		content: "";
-		left: calc(-1.1 * var(--cardPadding));
-		position: absolute;
-		right: calc(-1.1 * var(--cardPadding));
-		top: calc(-1.1 * var(--cardPadding));
 	}
 
 	.name {

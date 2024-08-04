@@ -1,9 +1,9 @@
 in a hurry - so taking notes here.
 
 - need twitch logo
-- need to fix youtube logo sizing
-- need to be able to click role or qualification link on main page
-- role or qualifications links need to open a new tab
-- language soup
-- hover on links
-- fix TagLine.astro
+- need hover style on anchor tags
+- fix TagLine.astro, for some reason it's not rending inline
+- fix .full-mcs, for some reason the boxes are shrinking
+- markdown rendering
+  - styling for descriptions (i.e. ul/li)
+  - role or qualifications links need to open a new tab

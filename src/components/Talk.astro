@@ -5,6 +5,7 @@ import TalkTag from "./TalkTag.astro";
 import TalkFormat from "./TalkFormat.astro";
 import TalkDiscord from "./TalkDiscord.astro";
 import Speaker from "./Speaker.astro";
+import LanguageSoup from "./LanguageSoup.astro";
 import { Markdown } from "@astropub/md";
 
 interface Props {
@@ -14,7 +15,7 @@ interface Props {
 
 const {
 	class: className,
-	talk: { title, speakers, tags, talkFormat, description, slug },
+	talk: { title, people, tags, talkFormat, description, slug },
 	...rest
 } = Astro.props;
 ---
@@ -26,17 +27,18 @@ const {
 			<Markdown of={description} />
 		</div>
 		<div class="tags">
-			{tags.map((tag) => <TalkTag tag={tag} />)}
+			{
+				tags
+					.filter((t) => t !== "Language Soup")
+					.map((tag) => <TalkTag tag={tag} />)
+			}
+			{tags.includes("Language Soup") ? <LanguageSoup /> : null}
 		</div>
 	</div>
 
 	<div class="talk-details">
 		<ul class="speakers">
-			{
-				speakers.map((speaker) => (
-					<Speaker href={`#${slug}`} speaker={speaker} />
-				))
-			}
+			{people.map((person) => <Speaker href={`#${slug}`} person={person} />)}
 		</ul>
 		<div class="talk-details-links">
 			<TalkDiscord discord={slug} />
@@ -124,7 +126,7 @@ const {
 		display: flex;
 		flex-direction: column;
 		font-family: var(--fontFamilyBody);
-		gap: 0.5rem;
+		gap: 2rem;
 		margin-top: 1.5rem;
 	}
 
