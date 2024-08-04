@@ -20,7 +20,7 @@ import { peopleBySlug } from "~/data/notion-data";
 			(
 				["nick-nisi", "fatimah-sarah-khalid"] as (keyof typeof peopleBySlug)[]
 			).map((person) => (
-				<SubtleCard class="speaker-card">
+				<SubtleCard class="mc-card">
 					<Speaker
 						href={`/speakers#${peopleBySlug[person].slug}`}
 						person={peopleBySlug[person]}
@@ -55,10 +55,10 @@ import { peopleBySlug } from "~/data/notion-data";
 		gap: 2rem;
 		justify-content: center;
 		padding: 2rem 0;
+		width: 100%;
 	}
 
-	.speaker-card {
-		max-width: 70%;
+	.mc-card {
 		width: 100%;
 	}
 
@@ -69,21 +69,17 @@ import { peopleBySlug } from "~/data/notion-data";
 			flex-direction: row;
 			flex-wrap: wrap;
 			margin: auto;
-			max-width: var(--widthBodyLean);
-		}
-
-		.speaker-card {
-			width: 48%;
+			/* max-width: var(--widthBodyFull); */
 		}
 	}
 
 	@media (min-width: 1017px) {
 		.mcs-list {
-			max-width: var(--widthBodyFull);
+			/* max-width: var(--widthBodyFull); */
 		}
 
-		.speaker-card {
-			width: 31%;
+		.mc-card {
+			width: 45%;
 		}
 	}
 </style>
