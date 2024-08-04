@@ -5,6 +5,7 @@ import bluesky from "~/assets/logos/bluesky.svg";
 import github from "~/assets/logos/github.svg";
 import linkedin from "~/assets/logos/linkedin.svg";
 import mastodon from "~/assets/logos/mastodon.svg";
+import twitch from "~/assets/logos/twitch.svg";
 import twitter from "~/assets/logos/twitter.svg";
 import website from "~/assets/logos/website.svg";
 import youtube from "~/assets/logos/YouTube.svg";
@@ -20,6 +21,7 @@ export interface BioLinksPlatforms {
 	github?: string | null;
 	linkedin?: string | null;
 	mastodon?: string | null;
+	twitch?: string | null;
 	twitter?: string | null;
 	website?: string | null;
 	youtube?: string | null;
@@ -58,6 +60,13 @@ const { class: className, links, name, ...rest } = Astro.props;
 		)
 	}
 	{
+		links.twitch && (
+			<a href={links.twitch} target="_blank" rel="noreferrer">
+				<Image alt={`${name} on Twitch`} class="link" src={twitch} />
+			</a>
+		)
+	}
+	{
 		links.twitter && (
 			<a href={links.twitter} target="_blank" rel="noreferrer">
 				<Image alt={`${name} on Twitter`} class="link" src={twitter} />
@@ -78,7 +87,6 @@ const { class: className, links, name, ...rest } = Astro.props;
 			</a>
 		)
 	}
-	<!-- TODO: Twitch -->
 </div>
 
 <style>

@@ -1,6 +1,5 @@
 in a hurry - so taking notes here.
 
-- need twitch logo
 - need hover style on anchor tags
 - fix TagLine.astro, for some reason it's not rending inline
 - fix .full-mcs, for some reason the boxes are shrinking
