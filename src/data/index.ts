@@ -5,8 +5,10 @@ import github from "~/assets/logos/github.svg";
 import linkedin from "~/assets/logos/linkedin.svg";
 import mastodon from "~/assets/logos/mastodon.svg";
 import twitter from "~/assets/logos/twitter.svg";
+import inngest from "~/assets/sponsors/inngest.svg";
 import inngestBlack from "~/assets/sponsors/inngest-black.svg";
 import openjsFoundationColor from "~/assets/sponsors/openjs-foundation-color.svg";
+import openjsFoundationLight from "~/assets/sponsors/openjs-foundation-light.svg";
 import * as notionData from "~/data/notion-data";
 
 export type { Person, TalkFormat, TalkInfo } from "~/data/notion-data";
@@ -20,12 +22,18 @@ export const links = {
 export const sponsors = [
 	{
 		href: "https://inngest.com?utm_source=squiggleconf",
-		logo: inngestBlack,
+		logos: {
+			dark: inngest,
+			light: inngestBlack,
+		},
 		title: "Inngest",
 	},
 	{
 		href: "https://openjsf.org?utm_source=squiggleconf",
-		logo: openjsFoundationColor,
+		logos: {
+			dark: openjsFoundationLight,
+			light: openjsFoundationColor,
+		},
 		title: "OpenJS Foundation",
 	},
 ];

@@ -120,8 +120,13 @@ const {
 	.talk-description {
 		color: var(--colorForegroundBody);
 		line-height: 1.25em;
-		text-align: left;
 		overflow: hidden;
+		text-align: left;
+		transition: var(--transitionMedium) line-height;
+	}
+
+	html.dark .talk-description {
+		line-height: 1.4;
 	}
 
 	.talk-details {

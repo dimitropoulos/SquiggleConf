@@ -1,12 +1,13 @@
 ---
-import Heading from "./Heading.astro";
-import SquiggleFlanked from "./SquiggleFlanked.astro";
+import { Image } from "astro:assets";
 
-import FullSection from "./FullSection.astro";
+import { sponsors } from "~/data/index";
+
 import AnchorButton from "./AnchorButton.astro";
 import BodyText from "./BodyText.astro";
-import { sponsors } from "~/data/index";
-import { Image } from "astro:assets";
+import Heading from "./Heading.astro";
+import FullSection from "./FullSection.astro";
+import SquiggleFlanked from "./SquiggleFlanked.astro";
 ---
 
 <FullSection>
@@ -22,7 +23,18 @@ import { Image } from "astro:assets";
 		{
 			sponsors.map((sponsor) => (
 				<a href={sponsor.href} rel="noreferrer" target="_blank">
-					<Image alt="" src={sponsor.logo} height={128} />
+					<Image
+						alt=""
+						class="sponsor-logo-dark"
+						src={sponsor.logos.dark}
+						height={128}
+					/>
+					<Image
+						alt=""
+						class="sponsor-logo-light"
+						src={sponsor.logos.light}
+						height={128}
+					/>
 				</a>
 			))
 		}
@@ -76,6 +88,11 @@ import { Image } from "astro:assets";
 
 	.sponsors img {
 		max-width: 14rem;
+	}
+
+	html.dark .sponsor-logo-light,
+	html:not(.dark) .sponsor-logo-dark {
+		display: none;
 	}
 
 	.action-button {

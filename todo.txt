@@ -1,6 +1,5 @@
 ## styling issues
 
-- dark mode
 - markdown rendering
   - role or qualifications links need to open a new tab
 - hack in normalize.css for p tags

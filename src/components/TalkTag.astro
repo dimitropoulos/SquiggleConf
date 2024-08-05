@@ -147,7 +147,6 @@ const isLight = whiteStrokeIcons.includes(image);
 	{
 		image && (
 			<Image
-				class="tag-icon"
 				class:list={["tag-icon", isLight ? "light-icon" : ""]}
 				alt={`${tag} logo`}
 				src={image}
@@ -162,7 +161,7 @@ const isLight = whiteStrokeIcons.includes(image);
 	.tag-chip {
 		display: inline-flex;
 		align-items: center;
-		background-color: var(--colorOffWhite);
+		background-color: var(--colorBackdropOff);
 		border-radius: 0.25rem;
 		box-shadow: 0 0 0.125rem var(--colorTextShadow);
 		font-size: 1rem;
@@ -179,5 +178,9 @@ const isLight = whiteStrokeIcons.includes(image);
 	.tag-icon {
 		margin-right: 0.25rem;
 		max-width: 24px;
+	}
+
+	html.dark .tag-icon {
+		filter: none;
 	}
 </style>

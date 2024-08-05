@@ -7,6 +7,7 @@ import HeroName from "./HeroName.astro";
 import NoBreak from "./NoBreak.astro";
 import IconOpenInNew from "~/assets/logos/icon-open-in-new.svg";
 import { Image } from "astro:assets";
+import ThemeToggle from "./ThemeToggle.astro";
 ---
 
 <Hero>
@@ -47,6 +48,8 @@ import { Image } from "astro:assets";
 			<Image alt="open in new window" src={IconOpenInNew} />
 		</a>
 	</div>
+
+	<ThemeToggle />
 </Hero>
 
 <style>
