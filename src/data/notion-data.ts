@@ -41,12 +41,12 @@ export const peopleBySlug = {
 		slug: "aakansha-doshi",
 	},
 	"chris-griffing": {
-		bio: "",
+		bio: "I love building things on my Twitch stream and some of those things have been CLI tools. When you are creating binaries, you sometimes want people to be able to extend your tools with their own functionality. The simplest path has traditionally been exposing a server API for someone to interact with but many security-minded users are averse to the idea of a tool they use running a local http server. You can give your users extensibility without the need for a local http server and at the same time allow them to use any of the languages supported by the Extism toolkit.",
 		links: {
 			bluesky: null,
 			github: "https://github.com/cmgriffing",
 			gitlab: null,
-			linkedin: null,
+			linkedin: "https://www.linkedin.com/in/cmgriffing",
 			mastodon: null,
 			medium: null,
 			twitch: "https://twitch.tv/cmgriffing",
@@ -194,12 +194,12 @@ export const peopleBySlug = {
 		slug: "laurynas-keturakis",
 	},
 	"loris-cro": {
-		bio: "",
+		bio: "Hi, I'm Loris. I work at the Zig Software Foundation, and my main job is to help Zig grow a vibrant community and ecosystem. While, like most people, I started with only high-level programming languages, Zig has introduced me to systems programming and shown me all the design choices that previous programming languages had precluded me from accessing. I now use my newfound superpowers to try to write performant and robust applications, and on occasion I even succeed :^\\)",
 		links: {
-			bluesky: null,
+			bluesky: "https://bsky.app/profile/kristoff.it",
 			github: "https://github.com/kristoff-it",
 			gitlab: null,
-			linkedin: null,
+			linkedin: "https://linkedin.com/in/kristoff-it",
 			mastodon: "https://hachyderm.io/@kristoff",
 			medium: null,
 			twitch: "https://www.twitch.tv/kristoff_it",
@@ -410,7 +410,7 @@ export const talksBySlug = {
 	},
 	"talk-chris-griffing": {
 		description:
-			"How awesome would it be if anyone could write plugins in any language that interop with your application regardless of your stack? Introducing [Extism](https://github.com/extism/extism): a powerful plugin system that allows you to integrate WASM code into your servers, the edge, CLIs, IoT, browsers and everything in between.\n\nThe talk will start out with a history of WASM and it's predecessor \\([asm.js](https://en.wikipedia.org/wiki/Asm.js)\\). We will even point out [Gary Bernhardt's ‘Birth and Death of JavaScript’ presentation](https://www.destroyallsoftware.com/talks/the-birth-and-death-of-javascript) and how it seems to have predicted where WASM could go. After understanding WASM and its history, we will outline what Extism is, how it can be used, as well as some real-world examples of its usage.",
+			"How awesome would it be if anyone could write plugins in any languages that interop with your application regardless of your stack? Introducing [Extism](https://github.com/extism/extism): a powerful plugin system that allows you to integrate WASM code into your servers, the edge, CLIs, IoT, browsers and everything in between.\n\nThe talk will start out with a history of WASM and it's predecessor \\([asm.js](https://en.wikipedia.org/wiki/Asm.js)\\). We will even point out [Gary Bernhardt's ‘Birth and Death of JavaScript’ presentation](https://www.destroyallsoftware.com/talks/the-birth-and-death-of-javascript) and how it seems to have predicted where WASM could go. After understanding WASM and its history, we will outline what Extism is, how it can be used, as well as some real-world examples of its usage.",
 		people: [peopleBySlug["chris-griffing"]],
 		slug: "talk-chris-griffing",
 		tags: ["WebAssembly", "Language Soup", "Cross-Language", "Open Source"],
