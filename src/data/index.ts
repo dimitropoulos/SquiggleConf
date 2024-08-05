@@ -76,20 +76,23 @@ const talksToExclude: TalkSlug[] = [
 ];
 
 const sortOrder: TalkSlug[] = [
+	// Full
+	"talk-robby-russell",
 	"talk-aakansha-doshi",
-	"talk-chris-griffing",
-	"talk-corina-murg",
 	"talk-dan-vanderkam",
 	"talk-don-isaac",
 	"talk-jess-lin",
-	"talk-laurynas-keturakis",
 	"talk-loris-cro",
-	"talk-rachel-nabors",
 	"talk-rick-viscomi",
 	"talk-rizel-scarlett",
-	"talk-robby-russell",
 	"talk-titian-cernicova-dragomir",
+	// Lightning
+	"talk-rachel-nabors",
+	"talk-chris-griffing",
+	"talk-laurynas-keturakis",
+	"talk-corina-murg",
 	"talk-yagiz-nizipli",
+	// Workshop
 	"workshop-katerina-and-max",
 	"workshop-sylwia-vargas",
 ];

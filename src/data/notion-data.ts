@@ -175,7 +175,7 @@ export const peopleBySlug = {
 		slug: "katerina-skroumpelou",
 	},
 	"laurynas-keturakis": {
-		bio: "",
+		bio: "I'm a full-stack software engineer building API tools at Fiberplane. I care about open source observability tools and focus on making them more accessible for every day developers.",
 		links: {
 			bluesky: "https://bsky.app/profile/laurynas.cc",
 			github: "https://github.com/keturiosakys",
