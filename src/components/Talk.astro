@@ -37,7 +37,7 @@ const {
 } = Astro.props;
 ---
 
-<li {...rest} class:list={["talk", className]} id={slug}>
+<li class:list={["talk", className]} id={slug} {...rest}>
 	<div class="talk-top">
 		<a class="title" href={`#${slug}`}>{title}</a>
 		<div class="talk-description">
@@ -128,6 +128,12 @@ const {
 
 	html.dark .talk-description {
 		line-height: 1.4;
+	}
+
+	.talk-description {
+		display: flex;
+		gap: 0.5rem;
+		flex-direction: column;
 	}
 
 	.talk-details {

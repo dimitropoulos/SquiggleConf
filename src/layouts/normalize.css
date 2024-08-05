@@ -20,8 +20,3 @@ p {
 	padding: 0;
 	font-size: inherit;
 }
-
-/* no idea why this wouldn't work in Talk.astro  */
-.talk-description > p {
-	margin-bottom: 0.5rem;
-}

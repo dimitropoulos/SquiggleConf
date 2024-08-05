@@ -1,6 +1,5 @@
 ## styling issues
 
-- hack in normalize.css for p tags
 - MOBILE
 - (partially done: just needs styling) front page `Talks` and `Workshops` should go to their respective sections on the /talks pages
 - is there a way to make the tags look less like buttons (?)
