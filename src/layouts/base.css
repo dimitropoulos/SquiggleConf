@@ -2,7 +2,10 @@
 	:root {
 		color-scheme: light;
 
-		--colorBackdropDark: #c9e6f3;
+		--colorLightBlue: #c9e6f3;
+		--colorWhite: #ffffff;
+
+		--colorBackdropDark: var(--colorLightBlue);
 		--colorBackdropLight: #edebe4;
 		--colorEmphasized: #1b80a1;
 		--colorEmphasizedBackground: #085e7a;

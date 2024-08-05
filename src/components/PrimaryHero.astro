@@ -52,10 +52,15 @@ import NoBreak from "./NoBreak.astro";
 	}
 
 	.sub-mention {
-		color: #cae6ff;
+		color: var(--colorLightBlue);
 		font-size: var(--fontSizeBody);
 		font-family: var(--fontFamilyHeading);
 		text-underline-offset: 0.2em;
+		transition: var(--transitionMedium) color;
+	}
+
+	.sub-mention:hover {
+		color: var(--colorWhite);
 	}
 
 	@media (min-width: 819px) {
