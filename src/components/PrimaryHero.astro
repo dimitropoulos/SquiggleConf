@@ -5,6 +5,8 @@ import AnchorButton from "./AnchorButton.astro";
 import Hero from "./Hero.astro";
 import HeroName from "./HeroName.astro";
 import NoBreak from "./NoBreak.astro";
+import IconOpenInNew from "~/assets/logos/icon-open-in-new.svg";
+import { Image } from "astro:assets";
 ---
 
 <Hero>
@@ -21,7 +23,8 @@ import NoBreak from "./NoBreak.astro";
 			rel="noreferrer"
 		>
 			<NoBreak>Apply for</NoBreak>
-			<NoBreak>DEI Scholarship ↗</NoBreak>
+			<NoBreak>DEI Scholarship </NoBreak>
+			<Image alt="open in new window" src={IconOpenInNew} />
 		</a>
 		<a
 			class="sub-mention"
@@ -30,7 +33,8 @@ import NoBreak from "./NoBreak.astro";
 			rel="noreferrer"
 		>
 			<NoBreak>Apply to</NoBreak>
-			<NoBreak>Volunteer ↗</NoBreak>
+			<NoBreak>Volunteer</NoBreak>
+			<Image alt="open in new window" src={IconOpenInNew} />
 		</a>
 		<a
 			class="sub-mention"
@@ -39,7 +43,8 @@ import NoBreak from "./NoBreak.astro";
 			rel="noreferrer"
 		>
 			<NoBreak>Bulk Tickets</NoBreak>
-			<NoBreak>Now Available ↗</NoBreak>
+			<NoBreak>Now Available</NoBreak>
+			<Image alt="open in new window" src={IconOpenInNew} />
 		</a>
 	</div>
 </Hero>

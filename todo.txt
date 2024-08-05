@@ -1,5 +1,36 @@
-in a hurry - so taking notes here.
+## styling issues
 
-- need hover style on anchor tags
+- dark mode
 - markdown rendering
   - role or qualifications links need to open a new tab
+- hack in normalize.css for p tags
+- MOBILE
+- (partially done: just needs styling) front page `Talks` and `Workshops` should go to their respective sections on the /talks pages
+- is there a way to make the tags look less like buttons (?)
+- speakers sections (i.e. Loris) can overflow their buttons
+- travel map overflows on mobile
+- fix weird cross-platform emoji
+  - for link-out (under main hero)
+    - added icon, but don't quite know how to do it in astro
+  - link (for talk section titles)
+    - added icon and replaced, but it hits the whole "anchor tag having a div child" thing
+
+## mechanical issues
+
+- change /talks to /sessions (?)
+- add section at top of /talks page to say that it's single-track
+  - possibly replacing TagLine at the top
+- maybe put ~$350 Early Bird~ (or say "sold out") so it's clear that the $450 are the standard tickets
+- bulk link sends you to the same buy page (not sure we can fix this?)
+- FAQ
+  - Schedule: add newsletter link
+  - tickets: update for bulk purchasing
+  - workshops: need to update paid mention, maybe also emphasize the "do not include"
+- "use this train station"
+  - bonus: small "I'm coming from NYC" section
+
+## copy issues
+
+- need description for Fatimah
+- need to check description with Nick Nisi
+- do a pass of session descriptions in notion to add links

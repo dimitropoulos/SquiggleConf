@@ -60,7 +60,7 @@ export const peopleBySlug = {
 		slug: "chris-griffing",
 	},
 	"corina-murg": {
-		bio: "",
+		bio: "I founded Web for Everyone, an initiative dedicated to introducing accessibility concepts to frontend developers, and authored numerous blog posts on the subject. I’m also the accessibility specialist for Gridiron Survivor, an open source project building a SaaS application.\nI’m a former high school math teacher turned frontend developer and certified accessibility engineer. As a teacher, I was regularly concerned with creating learning experiences that were accessible and welcoming to each and everyone of my students. What specifically introduced me to the concept of digital accessibility was the experience of teaching a legally blind student. Through my work in frontend development, I want to make sure that everyone, including my former student and other people with disabilities, can easily navigate and understand the products and services we build. \nOutside coding, I love reading and memorizing poems, as well as taking walks with my cat.",
 		links: {
 			bluesky: null,
 			github: "https://github.com/CorinaMurg",
@@ -413,7 +413,7 @@ export const talksBySlug = {
 			"How awesome would it be if anyone could write plugins in any languages that interop with your application regardless of your stack? Introducing [Extism](https://github.com/extism/extism): a powerful plugin system that allows you to integrate WASM code into your servers, the edge, CLIs, IoT, browsers and everything in between.\n\nThe talk will start out with a history of WASM and it's predecessor \\([asm.js](https://en.wikipedia.org/wiki/Asm.js)\\). We will even point out [Gary Bernhardt's ‘Birth and Death of JavaScript’ presentation](https://www.destroyallsoftware.com/talks/the-birth-and-death-of-javascript) and how it seems to have predicted where WASM could go. After understanding WASM and its history, we will outline what Extism is, how it can be used, as well as some real-world examples of its usage.",
 		people: [peopleBySlug["chris-griffing"]],
 		slug: "talk-chris-griffing",
-		tags: ["WebAssembly", "Language Soup", "Cross-Language", "Open Source"],
+		tags: ["WebAssembly", "Cross-Language", "Open Source", "Language Soup"],
 		talkFormat: "Lightning",
 		title: "Creating a WASM-Powered Plugin System For Your App",
 	},

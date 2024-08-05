@@ -2,10 +2,38 @@
 import ContentLayout from "~/layouts/ContentLayout.astro";
 import HeroForPage from "~/components/HeroForPage.astro";
 import PrimaryContents from "~/components/PrimaryContents.astro";
-import { talks } from "~/data";
+import { TalkFormat, talks } from "~/data";
 import Talk from "~/components/Talk.astro";
 import BodyText from "~/components/BodyText.astro";
 import TagLine from "~/components/TagLine.astro";
+import SquiggleFlanked from "~/components/SquiggleFlanked.astro";
+import Heading from "~/components/Heading.astro";
+
+const sections = [
+	{
+		talkFormat: "Full",
+		name: "Full-Length Talks",
+		description: "30 minute talks with 5 minutes for questions",
+		date: "October 3rd",
+	},
+	{
+		talkFormat: "Lightning",
+		name: "Lightning Talks",
+		description: "10 minute talks with 3 minutes for questions",
+		date: "October 3rd",
+	},
+	{
+		talkFormat: "Workshop",
+		name: "Workshops",
+		description: "2 hour hands-on sessions",
+		date: "October 4th",
+	},
+] satisfies {
+	talkFormat: TalkFormat;
+	name: string;
+	description: string;
+	date: string;
+}[];
 ---
 
 <ContentLayout>
@@ -14,21 +42,35 @@ import TagLine from "~/components/TagLine.astro";
 	<PrimaryContents>
 		<TagLine />
 
-		<BodyText as="p" class="talks-body-text" size="large" width="lean">
-			Talks are scheduled for all day Thursday, October 3rd.
-		</BodyText>
-
-		<ul class="talks-list">
-			{talks.map((talk) => <Talk talk={talk} />)}
-		</ul>
+		{
+			sections.map(({ talkFormat, name, description, date }) => (
+				<>
+					<SquiggleFlanked class="squiggle-flanked" width="lean">
+						<Heading
+							class="heading"
+							id={name.toLowerCase().replaceAll(" ", "-")}
+							level="h2"
+							link
+						>
+							{name}
+						</Heading>
+					</SquiggleFlanked>
+					<BodyText as="p">{description}</BodyText>
+					<BodyText as="p">{date}</BodyText>
+					<ul class="talks-list">
+						{talks
+							.filter((t) => t.talkFormat === talkFormat)
+							.map((talk) => (
+								<Talk talk={talk} />
+							))}
+					</ul>
+				</>
+			))
+		}
 
 		<BodyText as="p" class="talks-body-text" size="large" width="lean">
 			You’ll emerge with the best techniques to supercharge your projects —
 			whether you’re already a tooling wizard or trying to become one.
-		</BodyText>
-
-		<BodyText as="p" class="talks-body-text" size="large" width="lean">
-			Talks are scheduled for all day Thursday, October 3rd.
 		</BodyText>
 	</PrimaryContents>
 </ContentLayout>

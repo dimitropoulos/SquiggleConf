@@ -6,6 +6,7 @@ import PrimaryHero from "~/components/PrimaryHero.astro";
 import SpeakersContent from "~/components/SpeakersContent.astro";
 import ContentLayout from "~/layouts/ContentLayout.astro";
 import MCs from "~/components/MCs.astro";
+import Newsletter from "~/components/Newsletter.astro";
 ---
 
 <ContentLayout>
@@ -15,6 +16,7 @@ import MCs from "~/components/MCs.astro";
 			<Information />
 			<SpeakersContent />
 			<MCs />
+			<Newsletter class="newsletter" />
 			<Sponsors />
 		</div>
 	</PrimaryContents>
@@ -26,5 +28,9 @@ import MCs from "~/components/MCs.astro";
 		display: flex;
 		gap: 7rem;
 		flex-direction: column;
+	}
+
+	.newsletter {
+		max-width: fit-content;
 	}
 </style>

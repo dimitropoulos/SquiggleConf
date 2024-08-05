@@ -23,5 +23,5 @@ p {
 
 /* no idea why this wouldn't work in Talk.astro  */
 .talk-description > p {
-	margin: 0.5rem 0;
+	margin-bottom: 0.5rem;
 }

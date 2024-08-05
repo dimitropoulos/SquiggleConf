@@ -2,10 +2,8 @@
 import { type TalkInfo } from "~/data";
 
 import TalkTag from "./TalkTag.astro";
-import TalkFormat from "./TalkFormat.astro";
 import TalkDiscord from "./TalkDiscord.astro";
 import Speaker from "./Speaker.astro";
-import LanguageSoup from "./LanguageSoup.astro";
 import { Markdown } from "@astropub/md";
 
 interface Props {
@@ -13,9 +11,27 @@ interface Props {
 	talk: TalkInfo;
 }
 
+const languageSoup = [
+	"Rust",
+	"TypeScript",
+	"Zig",
+	"Go",
+	"C++",
+	"C",
+	"OCaml",
+	"Haskell",
+	"Python",
+	"Ruby",
+	"Elixir",
+	"Java",
+	".Net",
+	"Perl",
+	"PHP",
+];
+
 const {
 	class: className,
-	talk: { title, people, tags, talkFormat, description, slug },
+	talk: { title, people, tags, description, slug },
 	...rest
 } = Astro.props;
 ---
@@ -29,10 +45,14 @@ const {
 		<div class="tags">
 			{
 				tags
-					.filter((t) => t !== "Language Soup")
+					.flatMap((t) => {
+						if (t === "Language Soup") {
+							return languageSoup;
+						}
+						return t;
+					})
 					.map((tag) => <TalkTag tag={tag} />)
 			}
-			{tags.includes("Language Soup") ? <LanguageSoup /> : null}
 		</div>
 	</div>
 
@@ -42,7 +62,6 @@ const {
 		</ul>
 		<div class="talk-details-links">
 			<TalkDiscord discord={slug} />
-			<TalkFormat format={talkFormat} />
 		</div>
 	</div>
 </li>
@@ -100,9 +119,7 @@ const {
 
 	.talk-description {
 		color: var(--colorForegroundBody);
-		margin-top: 0.5rem;
 		line-height: 1.25em;
-		margin-bottom: 0.5rem;
 		text-align: left;
 		overflow: hidden;
 	}

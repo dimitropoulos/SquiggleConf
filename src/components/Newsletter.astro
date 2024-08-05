@@ -8,22 +8,24 @@ interface Props {
 const { class: className, ...rest } = Astro.props;
 ---
 
-<form
-	{...rest}
-	class:list={["newsletter", className]}
-	action="https://app.loops.so/api/newsletter-form/clwpkthom0067d11n8jbrxb3b"
-	id="newsletter"
-	method="POST"
->
-	<label for="email">
-		Enter your email for deadlines, announcements, and other great SquiggleConf
-		news.
-	</label>
-	<input id="email" type="email" placeholder="you.are@awesome.com" />
-	<button class="button" type="submit">Subscribe</button>
-</form>
+<div>
+	<form
+		{...rest}
+		class:list={["newsletter", className]}
+		action="https://app.loops.so/api/newsletter-form/clwpkthom0067d11n8jbrxb3b"
+		id="newsletter"
+		method="POST"
+	>
+		<label for="email">
+			Enter your email for deadlines, announcements, and other great
+			SquiggleConf news.
+		</label>
+		<input id="email" type="email" placeholder="you.are@awesome.com" />
+		<button class="button" type="submit">Subscribe</button>
+	</form>
 
-<BodyText aria-live="assertive" id="newsletter-message" />
+	<BodyText aria-live="assertive" id="newsletter-message" />
+</div>
 
 <script>
 	const form = document.getElementById("newsletter") as HTMLFormElement;
