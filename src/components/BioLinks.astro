@@ -9,6 +9,7 @@ import twitch from "~/assets/logos/twitch.svg";
 import twitter from "~/assets/logos/twitter.svg";
 import website from "~/assets/logos/website.svg";
 import youtube from "~/assets/logos/YouTube.svg";
+import gitlab from "~/assets/logos/GitLab.svg";
 
 interface Props {
 	class?: string;
@@ -19,6 +20,7 @@ interface Props {
 export interface BioLinksPlatforms {
 	bluesky?: string | null;
 	github?: string | null;
+	gitlab?: string | null;
 	linkedin?: string | null;
 	mastodon?: string | null;
 	twitch?: string | null;
@@ -35,6 +37,13 @@ const { class: className, links, name, ...rest } = Astro.props;
 		links.github && (
 			<a href={links.github} target="_blank" rel="noreferrer">
 				<Image alt={`${name} on GitHub`} class="link" src={github} />
+			</a>
+		)
+	}
+	{
+		links.gitlab && (
+			<a href={links.gitlab} target="_blank" rel="noreferrer">
+				<Image alt={`${name} on GitLab`} class="link" src={gitlab} />
 			</a>
 		)
 	}
