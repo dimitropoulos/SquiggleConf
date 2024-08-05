@@ -10,6 +10,7 @@ import twitter from "~/assets/logos/twitter.svg";
 import website from "~/assets/logos/website.svg";
 import youtube from "~/assets/logos/YouTube.svg";
 import gitlab from "~/assets/logos/GitLab.svg";
+import medium from "~/assets/logos/Medium.svg";
 
 interface Props {
 	class?: string;
@@ -27,6 +28,7 @@ export interface BioLinksPlatforms {
 	twitter?: string | null;
 	website?: string | null;
 	youtube?: string | null;
+	medium?: string | null;
 }
 
 const { class: className, links, name, ...rest } = Astro.props;
@@ -86,6 +88,13 @@ const { class: className, links, name, ...rest } = Astro.props;
 		links.youtube && (
 			<a href={links.youtube} target="_blank" rel="noreferrer">
 				<Image alt={`${name} on YouTube'`} class="link" src={youtube} />
+			</a>
+		)
+	}
+	{
+		links.medium && (
+			<a href={links.medium} target="_blank" rel="noreferrer">
+				<Image alt={`${name} on Medium'`} class="link" src={medium} />
 			</a>
 		)
 	}
