@@ -17,28 +17,33 @@ const image = import(`../assets/avatars/${speaker.slug}.jpg`);
 ---
 
 <li class:list={["speaker", className]} {...rest}>
-	<a class="speaker-image-container" href={Astro.props.href}>
-		<Image alt="" class="speaker-image" src={image} width={128} height={128} />
-	</a>
+	<div class="speaker-image-container">
+		<Image
+			alt={`${speaker.name} Avatar`}
+			class="speaker-image"
+			src={image}
+			width={128}
+			height={128}
+		/>
+	</div>
 	<div class="speaker-text">
-		<div class="speaker-text-links">
-			<div class="name">{speaker.name}</div>
-			<div class="details">
-				{
-					speaker.qualification && (
-						<div>
-							<Markdown.Inline of={speaker.qualification} />
-						</div>
-					)
-				}
-				{
-					speaker.role && (
-						<div>
-							<Markdown.Inline of={speaker.role} />
-						</div>
-					)
-				}
-			</div>
+		<a class="speaker-text-links" href={Astro.props.href}> </a>
+		<div class="name">{speaker.name}</div>
+		<div class="details">
+			{
+				speaker.qualification && (
+					<div>
+						<Markdown.Inline of={speaker.qualification} />
+					</div>
+				)
+			}
+			{
+				speaker.role && (
+					<div>
+						<Markdown.Inline of={speaker.role} />
+					</div>
+				)
+			}
 		</div>
 		<BioLinks
 			class="speaker-bio-links"
@@ -77,6 +82,23 @@ const image = import(`../assets/avatars/${speaker.slug}.jpg`);
 		text-decoration: none;
 	}
 
+	.speaker-text-links::before {
+		bottom: calc(-1.1 * var(--cardPadding));
+		content: "";
+		left: calc(-1.1 * var(--cardPadding));
+		position: absolute;
+		right: calc(-1.1 * var(--cardPadding));
+		top: calc(-1.1 * var(--cardPadding));
+	}
+
+	.speaker-text-links {
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		gap: 0.5rem;
+		text-decoration: none;
+	}
+
 	.name {
 		color: var(--colorForegroundBody);
 		font-size: var(--fontSizeH4);
@@ -89,6 +111,7 @@ const image = import(`../assets/avatars/${speaker.slug}.jpg`);
 		font-weight: var(--fontWeightLight);
 		display: flex;
 		gap: 0.25rem;
+		position: relative;
 		flex-direction: column;
 	}
 
