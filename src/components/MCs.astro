@@ -8,6 +8,7 @@ import FullSection from "./FullSection.astro";
 import Speaker from "./Speaker.astro";
 import SubtleCard from "./SubtleCard.astro";
 import { peopleBySlug } from "~/data/notion-data";
+import CardsList from "./CardsList.astro";
 ---
 
 <FullSection class="full-mcs">
@@ -15,11 +16,9 @@ import { peopleBySlug } from "~/data/notion-data";
 		<Heading class="heading" id="mcs" level="h2" link>MCs</Heading>
 	</SquiggleFlanked>
 
-	<ul class="mcs-list">
+	<CardsList>
 		{
-			(
-				["nick-nisi", "fatimah-sarah-khalid"] as (keyof typeof peopleBySlug)[]
-			).map((person) => (
+			(["nick-nisi", "fatimah-sarah-khalid"] as const).map((person) => (
 				<SubtleCard class="mc-card">
 					<Speaker
 						href={`/speakers#${peopleBySlug[person].slug}`}
@@ -28,14 +27,10 @@ import { peopleBySlug } from "~/data/notion-data";
 				</SubtleCard>
 			))
 		}
-	</ul>
+	</CardsList>
 </FullSection>
 
 <style>
-	.full-mcs {
-		/* TODO no idea what to put here to get the section to be full width without other side effects */
-	}
-
 	.squiggle-flanked {
 		margin-bottom: 3rem;
 	}
@@ -44,40 +39,11 @@ import { peopleBySlug } from "~/data/notion-data";
 		font-size: var(--fontSizeH2);
 	}
 
-	.speakers-body-text {
-		margin: auto;
-	}
-
-	.mcs-list {
-		display: flex;
-		flex-direction: column;
-		font-family: var(--fontFamilyBody);
-		gap: 2rem;
-		justify-content: center;
-		padding: 2rem 0;
-		width: 100%;
-	}
-
 	.mc-card {
 		width: 100%;
 	}
 
-	@media (min-width: 700px) {
-		.mcs-list {
-			align-items: center;
-			justify-content: center;
-			flex-direction: row;
-			flex-wrap: wrap;
-			margin: auto;
-			/* max-width: var(--widthBodyFull); */
-		}
-	}
-
 	@media (min-width: 1017px) {
-		.mcs-list {
-			/* max-width: var(--widthBodyFull); */
-		}
-
 		.mc-card {
 			width: 45%;
 		}

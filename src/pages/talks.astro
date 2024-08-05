@@ -76,16 +76,18 @@ const sections = [
 </ContentLayout>
 
 <style>
-	.talks-body-text + .talks-body-text {
-		margin-top: 2rem;
-	}
-
 	.talks-list {
 		display: flex;
 		flex-direction: column;
 		gap: 2rem;
-		margin: 4rem 2rem;
-		padding-left: 0;
+		margin: 2rem;
+		padding: 0 var(--widthBodyPadding);
 		list-style: none;
+	}
+
+	@media (min-width: 1017px) {
+		.talks-list {
+			margin: 4rem 2rem;
+		}
 	}
 </style>

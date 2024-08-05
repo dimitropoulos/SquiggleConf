@@ -81,7 +81,6 @@ const {
 		flex-direction: column;
 		font-family: var(--fontFamilyBody);
 		justify-content: space-between;
-		max-width: var(--widthBodyFull);
 		padding: 1.5rem;
 		scroll-margin-top: 1rem;
 	}
@@ -138,8 +137,9 @@ const {
 
 	.talk-details {
 		display: flex;
-		flex-direction: row;
-		align-items: flex-end;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 1rem;
 		justify-content: space-between;
 		width: 100%;
 	}
@@ -162,5 +162,18 @@ const {
 
 	p {
 		margin: 1rem !important;
+	}
+
+	@media (min-width: 700px) {
+		.talk-details {
+			align-items: flex-end;
+			flex-direction: row;
+		}
+	}
+
+	@media (min-width: 1017px) {
+		.talk {
+			max-width: var(--widthBodyFull);
+		}
 	}
 </style>

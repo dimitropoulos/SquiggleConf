@@ -1,6 +1,5 @@
 ## styling issues
 
-- MOBILE
 - (partially done: just needs styling) front page `Talks` and `Workshops` should go to their respective sections on the /talks pages
 - is there a way to make the tags look less like buttons (?)
 - speakers sections (i.e. Loris) can overflow their buttons

@@ -8,6 +8,7 @@ import FullSection from "./FullSection.astro";
 import Speaker from "./Speaker.astro";
 import SubtleCard from "./SubtleCard.astro";
 import TagLine from "./TagLine.astro";
+import CardsList from "./CardsList.astro";
 ---
 
 <FullSection>
@@ -21,7 +22,7 @@ import TagLine from "./TagLine.astro";
 		See full details on <a href="/talks">Talks</a>.
 	</BodyText>
 
-	<ul class="speakers-list">
+	<CardsList class="speakers-list">
 		{
 			talks.flatMap((talk) =>
 				talk.people.map((person) => (
@@ -31,7 +32,7 @@ import TagLine from "./TagLine.astro";
 				)),
 			)
 		}
-	</ul>
+	</CardsList>
 
 	<BodyText as="p" class="speakers-body-text" size="large" width="lean">
 		You’ll emerge with the best techniques to supercharge your projects —
@@ -55,40 +56,13 @@ import TagLine from "./TagLine.astro";
 		margin: auto;
 	}
 
-	.speakers-list {
-		display: flex;
-		flex-direction: column;
-		font-family: var(--fontFamilyBody);
-		gap: 2rem;
-		justify-content: center;
-		padding: 2rem 0;
-	}
-
-	.speaker-card {
-		max-width: 70%;
-		width: 100%;
-	}
-
 	@media (min-width: 700px) {
-		.speakers-list {
-			align-items: center;
-			justify-content: center;
-			flex-direction: row;
-			flex-wrap: wrap;
-			margin: auto;
-			max-width: var(--widthBodyLean);
-		}
-
 		.speaker-card {
-			width: 48%;
+			width: 47%;
 		}
 	}
 
 	@media (min-width: 1017px) {
-		.speakers-list {
-			max-width: var(--widthBodyFull);
-		}
-
 		.speaker-card {
 			width: 31%;
 		}
