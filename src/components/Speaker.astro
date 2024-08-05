@@ -7,11 +7,12 @@ import { Markdown } from "@astropub/md";
 
 interface Props {
 	class?: string;
+	link?: boolean;
 	href: string;
 	person: Person;
 }
 
-const { class: className, person: speaker, ...rest } = Astro.props;
+const { class: className, person: speaker, link, ...rest } = Astro.props;
 
 const image = import(`../assets/avatars/${speaker.slug}.jpg`);
 ---
@@ -27,7 +28,7 @@ const image = import(`../assets/avatars/${speaker.slug}.jpg`);
 		/>
 	</div>
 	<div class="speaker-text">
-		<a class="speaker-text-links" href={Astro.props.href}> </a>
+		{link && <a class="speaker-text-links" href={Astro.props.href} />}
 		<div class="name">{speaker.name}</div>
 		<div class="details">
 			{

@@ -26,7 +26,7 @@ import TagLine from "./TagLine.astro";
 			talks.flatMap((talk) =>
 				talk.people.map((person) => (
 					<SubtleCard class="speaker-card">
-						<Speaker href={`/talks#${talk.slug}`} person={person} />
+						<Speaker href={`/talks#${talk.slug}`} link person={person} />
 					</SubtleCard>
 				)),
 			)
