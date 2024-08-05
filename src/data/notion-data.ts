@@ -465,12 +465,12 @@ export const talksBySlug = {
 	},
 	"talk-laurynas-keturakis": {
 		description:
-			"Traces showing function-by-function \\(span-by-span\\) execution are incredibly useful for production code debugging work. Yet, many organizations adopt traces late in the development cycle. Code already running in production tends to settle and be harder to change based on late-breaking findings.\n\nThis talk will take you from tracing trepidation to total tracing glory. We’ll cover the benefits of tracing, some of the challenges of integrating it into new or existing apps, and the lovely visibility benefits you get from a well-traced applications.",
+			"Traces are an incredibly useful tool for understanding how your code actually runs function-by-function. With OpenTelemetry being accepted as standard by vendors and language platforms alike, there has never been a better time to start using it. Yet, many teams adopt traces late in the development cycle when code is hard to change and new tools always take time and money to learn.\n\nThis talk will show you how you can get started using tracing locally and what you can get out of it. It will discuss the benefits you get from well-traced applications and why it is so hard to get there.  We’ll cover what makes tracing hard, how to smooth out those rough edges and get you debugging your code in no time!",
 		people: [peopleBySlug["laurynas-keturakis"]],
 		slug: "talk-laurynas-keturakis",
 		tags: ["Tracing", "Debugging", "Open Telemetry"],
 		talkFormat: "Lightning",
-		title: "Tricking Yourself Into Tracing",
+		title: "racing: Start On Day Zero",
 	},
 	"talk-loris-cro": {
 		description:
