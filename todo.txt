@@ -1,6 +1,5 @@
 ## styling issues
 
-- is there a way to make the tags look less like buttons (?)
 - speakers sections (i.e. Loris) can overflow their buttons
 - fix weird cross-platform emoji
   - for link-out (under main hero)

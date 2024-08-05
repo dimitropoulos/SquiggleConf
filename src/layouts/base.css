@@ -3,19 +3,21 @@
 		color-scheme: light;
 
 		--colorCream: #edebe4;
-		--colorLightBlue: #c9e6f3;
+		--colorBlueLight: #c9e6f3;
+		--colorDull: #b6c1c6;
 		--colorOffWhite: #eaeaff;
 		--colorRedDark: #7f3a5c;
 		--colorRedLight: #ffbfc2;
 		--colorWhite: #ffffff;
 
-		--colorBackdropDark: var(--colorLightBlue);
+		--colorBackdropDark: var(--colorBlueLight);
 		--colorBackdropLight: var(--colorCream);
 		--colorBackdropOff: var(--colorOffWhite);
 		--colorEmphasized: #1b80a1;
 		--colorEmphasizedBackground: #085e7a;
 		--colorInverted: var(--colorCream);
 		--colorInvertedMild: #78c1d9;
+		--colorInvertedDull: rgb(165, 204, 218);
 		--colorForeground: #1f3840;
 		--colorForegroundBody: #203238;
 		--colorSubtleLight: #a5e2fc;
