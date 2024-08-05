@@ -2,8 +2,9 @@
 import { Image } from "astro:assets";
 
 import { type Person } from "~/data";
+
 import BioLinks from "./BioLinks.astro";
-import { Markdown } from "@astropub/md";
+import SafeMarkdown from "./SafeMarkdown.astro";
 
 interface Props {
 	class?: string;
@@ -31,20 +32,8 @@ const image = import(`../assets/avatars/${speaker.slug}.jpg`);
 		{link && <a class="speaker-text-links" href={Astro.props.href} />}
 		<div class="name">{speaker.name}</div>
 		<div class="details">
-			{
-				speaker.qualification && (
-					<div>
-						<Markdown.Inline of={speaker.qualification} />
-					</div>
-				)
-			}
-			{
-				speaker.role && (
-					<div>
-						<Markdown.Inline of={speaker.role} />
-					</div>
-				)
-			}
+			{speaker.qualification && <SafeMarkdown of={speaker.qualification} />}
+			{speaker.role && <SafeMarkdown of={speaker.role} />}
 		</div>
 		<BioLinks
 			class="speaker-bio-links"

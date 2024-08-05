@@ -5,6 +5,7 @@ import TalkTag from "./TalkTag.astro";
 import TalkDiscord from "./TalkDiscord.astro";
 import Speaker from "./Speaker.astro";
 import { Markdown } from "@astropub/md";
+import SafeMarkdown from "./SafeMarkdown.astro";
 
 interface Props {
 	class?: string;
@@ -40,7 +41,7 @@ const {
 	<div class="talk-top">
 		<a class="title" href={`#${slug}`}>{title}</a>
 		<div class="talk-description">
-			<Markdown of={description} />
+			<SafeMarkdown of={description} />
 		</div>
 		<div class="tags">
 			{
