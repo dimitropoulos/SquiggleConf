@@ -21,7 +21,7 @@ p {
 	font-size: inherit;
 }
 
-/* no idea why this wouldn't work in Talk.astro */
+/* no idea why this wouldn't work in Talk.astro  */
 .talk-description > p {
 	margin: 0.5rem 0;
 }
