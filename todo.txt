@@ -1,6 +1,5 @@
 ## styling issues
 
-- speakers sections (i.e. Loris) can overflow their buttons
 - fix weird cross-platform emoji
   - for link-out (under main hero)
     - added icon, but don't quite know how to do it in astro
