@@ -1,9 +1,7 @@
 ## styling issues
 
-- (partially done: just needs styling) front page `Talks` and `Workshops` should go to their respective sections on the /talks pages
 - is there a way to make the tags look less like buttons (?)
 - speakers sections (i.e. Loris) can overflow their buttons
-- travel map overflows on mobile
 - fix weird cross-platform emoji
   - for link-out (under main hero)
     - added icon, but don't quite know how to do it in astro
@@ -13,10 +11,9 @@
 ## mechanical issues
 
 - change /talks to /sessions (?)
+  - (partially done: just needs styling) front page `Talks` and `Workshops` should go to their respective sections on the /talks pages
 - add section at top of /talks page to say that it's single-track
   - possibly replacing TagLine at the top
-- maybe put ~$350 Early Bird~ (or say "sold out") so it's clear that the $450 are the standard tickets
-- bulk link sends you to the same buy page (not sure we can fix this?)
 - FAQ
   - Schedule: add newsletter link
   - tickets: update for bulk purchasing
