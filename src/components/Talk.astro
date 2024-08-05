@@ -119,6 +119,9 @@ const {
 
 	.talk-description {
 		color: var(--colorForegroundBody);
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
 		line-height: 1.25em;
 		overflow: hidden;
 		text-align: left;
@@ -127,12 +130,6 @@ const {
 
 	html.dark .talk-description {
 		line-height: 1.4;
-	}
-
-	.talk-description {
-		display: flex;
-		gap: 0.5rem;
-		flex-direction: column;
 	}
 
 	.talk-details {
