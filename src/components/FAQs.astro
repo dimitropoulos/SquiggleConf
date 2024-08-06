@@ -5,7 +5,7 @@ import { Image } from "astro:assets";
 import dropdown from "~/assets/glyphs/dropdown.svg";
 
 import Heading from "./Heading.astro";
-import SquiggleFlanked from "./SquiggleFlanked.astro";
+import HeadingFlanked from "./HeadingFlanked.astro";
 
 type FAQSection = [string, [string, string][]];
 
@@ -95,9 +95,7 @@ Note that talk tickets do not include:
 ---
 
 <section class="faq-section">
-	<SquiggleFlanked class="squiggle-flanked" width="full">
-		<Heading class="h2" id="faqs" level="h2" link>FAQs</Heading>
-	</SquiggleFlanked>
+	<HeadingFlanked id="faqs">FAQs</HeadingFlanked>
 
 	<div class="faqs">
 		{
@@ -128,17 +126,9 @@ Note that talk tickets do not include:
 		width: 100%;
 	}
 
-	.squiggle-flanked {
-		margin-bottom: 3rem;
-	}
-
 	.action-button {
 		display: inline-block;
 		margin: 2rem;
-	}
-
-	.h2 {
-		font-size: var(--fontSizeH2);
 	}
 
 	.faqs {

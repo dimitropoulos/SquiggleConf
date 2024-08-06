@@ -1,20 +1,15 @@
 ---
-import { talks } from "~/data";
+import { peopleBySlug } from "~/data/notion-data";
 
-import BodyText from "~/components/BodyText.astro";
-import Heading from "./Heading.astro";
-import SquiggleFlanked from "./SquiggleFlanked.astro";
+import CardsList from "./CardsList.astro";
 import FullSection from "./FullSection.astro";
+import HeadingFlanked from "./HeadingFlanked.astro";
 import Speaker from "./Speaker.astro";
 import SubtleCard from "./SubtleCard.astro";
-import { peopleBySlug } from "~/data/notion-data";
-import CardsList from "./CardsList.astro";
 ---
 
 <FullSection class="full-mcs">
-	<SquiggleFlanked class="squiggle-flanked" width="lean">
-		<Heading class="heading" id="mcs" level="h2" link>MCs</Heading>
-	</SquiggleFlanked>
+	<HeadingFlanked id="mcs">MCs</HeadingFlanked>
 
 	<CardsList>
 		{
@@ -31,14 +26,6 @@ import CardsList from "./CardsList.astro";
 </FullSection>
 
 <style>
-	.squiggle-flanked {
-		margin-bottom: 3rem;
-	}
-
-	.heading {
-		font-size: var(--fontSizeH2);
-	}
-
 	.mc-card {
 		width: 100%;
 	}

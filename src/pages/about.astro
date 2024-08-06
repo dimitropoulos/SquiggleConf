@@ -6,12 +6,11 @@ import michiganTypeScript from "~/assets/michigan-typescript.png";
 import AnchorButton from "~/components/AnchorButton.astro";
 import Bio, { Props as BioProps } from "~/components/Bio.astro";
 import BodyText from "~/components/BodyText.astro";
-import Heading from "~/components/Heading.astro";
+import HeadingFlanked from "~/components/HeadingFlanked.astro";
 import HeroForPage from "~/components/HeroForPage.astro";
 import PrimaryContents from "~/components/PrimaryContents.astro";
-import SquiggleFlanked from "~/components/SquiggleFlanked.astro";
-import ContentLayout from "~/layouts/ContentLayout.astro";
 import { links } from "~/data/index";
+import ContentLayout from "~/layouts/ContentLayout.astro";
 
 const bios: Omit<BioProps, "size">[] = [
 	{
@@ -70,11 +69,7 @@ const bios: Omit<BioProps, "size">[] = [
 
 		<br />
 
-		<SquiggleFlanked class="squiggle-flanked" width="lean">
-			<Heading class="heading" id="dei-scholarship" level="h2" link>
-				DEI Scholarship
-			</Heading>
-		</SquiggleFlanked>
+		<HeadingFlanked id="dei-scholarship">DEI Scholarship</HeadingFlanked>
 
 		<BodyText as="p" size="large" width="full">
 			We believe that a thriving tech industry needs to be diverse, equitable,
@@ -93,11 +88,7 @@ const bios: Omit<BioProps, "size">[] = [
 			Apply for the DEI Scholarship
 		</AnchorButton>
 
-		<SquiggleFlanked class="squiggle-flanked" width="lean">
-			<Heading class="heading" id="volunteering" level="h2" link>
-				Volunteering
-			</Heading>
-		</SquiggleFlanked>
+		<HeadingFlanked id="volunteering">Volunteering</HeadingFlanked>
 
 		<BodyText as="p" size="large" width="full">
 			Volunteering gives you an opportunity to get right in the thick of the
@@ -117,11 +108,7 @@ const bios: Omit<BioProps, "size">[] = [
 			Volunteer at SquiggleConf
 		</AnchorButton>
 
-		<SquiggleFlanked class="squiggle-flanked" width="lean">
-			<Heading class="heading" id="squiggle-tools" level="h2" link>
-				Squiggle.Tools
-			</Heading>
-		</SquiggleFlanked>
+		<HeadingFlanked id="squiggle-tools">Squiggle.Tools</HeadingFlanked>
 
 		<BodyText as="p" size="large" width="full">
 			SquiggleConf is a production of Squiggle.Tools, a nonprofit organization
@@ -137,17 +124,9 @@ const bios: Omit<BioProps, "size">[] = [
 </ContentLayout>
 
 <style>
-	.squiggle-flanked {
-		margin: 3rem;
-	}
-
 	.action-button {
 		display: inline-block;
 		margin: 2rem;
-	}
-
-	.heading {
-		font-size: var(--fontSizeH2);
 	}
 
 	.bios {

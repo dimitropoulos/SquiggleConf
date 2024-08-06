@@ -6,8 +6,7 @@ import { TalkFormat, talks } from "~/data";
 import Talk from "~/components/Talk.astro";
 import BodyText from "~/components/BodyText.astro";
 import TagLine from "~/components/TagLine.astro";
-import SquiggleFlanked from "~/components/SquiggleFlanked.astro";
-import Heading from "~/components/Heading.astro";
+import HeadingFlanked from "~/components/HeadingFlanked.astro";
 
 const sections = [
 	{
@@ -45,16 +44,9 @@ const sections = [
 		{
 			sections.map(({ talkFormat, name, description, date }) => (
 				<>
-					<SquiggleFlanked class="squiggle-flanked" width="lean">
-						<Heading
-							class="heading"
-							id={name.toLowerCase().replaceAll(" ", "-")}
-							level="h2"
-							link
-						>
-							{name}
-						</Heading>
-					</SquiggleFlanked>
+					<HeadingFlanked id={name.toLowerCase().replaceAll(" ", "-")}>
+						{name}
+					</HeadingFlanked>
 					<BodyText as="p">{description}</BodyText>
 					<BodyText as="p">{date}</BodyText>
 					<ul class="talks-list">

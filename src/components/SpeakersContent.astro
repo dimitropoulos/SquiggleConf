@@ -1,20 +1,17 @@
 ---
 import { talks } from "~/data";
 
-import BodyText from "~/components/BodyText.astro";
-import Heading from "./Heading.astro";
-import SquiggleFlanked from "./SquiggleFlanked.astro";
+import BodyText from "./BodyText.astro";
+import CardsList from "./CardsList.astro";
 import FullSection from "./FullSection.astro";
+import HeadingFlanked from "./HeadingFlanked.astro";
 import Speaker from "./Speaker.astro";
 import SubtleCard from "./SubtleCard.astro";
 import TagLine from "./TagLine.astro";
-import CardsList from "./CardsList.astro";
 ---
 
 <FullSection>
-	<SquiggleFlanked class="squiggle-flanked" width="lean">
-		<Heading class="heading" id="speakers" level="h2" link>Speakers</Heading>
-	</SquiggleFlanked>
+	<HeadingFlanked id="speakers">Speakers</HeadingFlanked>
 
 	<TagLine />
 	<br />
@@ -44,14 +41,6 @@ import CardsList from "./CardsList.astro";
 </FullSection>
 
 <style>
-	.squiggle-flanked {
-		margin-bottom: 3rem;
-	}
-
-	.heading {
-		font-size: var(--fontSizeH2);
-	}
-
 	.speakers-body-text {
 		margin: auto;
 	}
