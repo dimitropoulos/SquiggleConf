@@ -3,7 +3,6 @@ import { Image } from "astro:assets";
 
 import { sponsors } from "~/data/index";
 
-import AnchorButton from "./AnchorButton.astro";
 import BodyText from "./BodyText.astro";
 import FullSection from "./FullSection.astro";
 import HeadingFlanked from "./HeadingFlanked.astro";
@@ -36,29 +35,6 @@ import HeadingFlanked from "./HeadingFlanked.astro";
 			))
 		}
 	</div>
-
-	<HeadingFlanked id="sponsorships">Sponsorships</HeadingFlanked>
-
-	<BodyText size="large" width="lean">
-		Get your branding in front of enthusiastic web developers and key players in
-		great web tooling.
-	</BodyText>
-	<AnchorButton
-		class="action-button"
-		href="https://docs.google.com/document/d/1zyWidlU_kx9TDZQx4pez4tQX-kWRyXS18ukhoC9dLko"
-		target="_blank"
-		rel="noreferrer"
-	>
-		Sponsorship Prospectus
-	</AnchorButton>
-	<BodyText size="large">
-		Contact us at <a
-			href="mailto:sponsorships@squiggleconf.com"
-			target="_blank"
-		>
-			sponsorships@squiggleconf.com</a
-		>.
-	</BodyText>
 </FullSection>
 
 <style>
@@ -66,7 +42,7 @@ import HeadingFlanked from "./HeadingFlanked.astro";
 		align-items: center;
 		display: flex;
 		flex-direction: column;
-		padding: 2rem 2rem 4rem;
+		padding: 2rem 2rem 0;
 		justify-content: center;
 		margin: auto;
 	}

@@ -6,7 +6,6 @@
 - add section at top of /talks page to say that it's single-track
   - possibly replacing TagLine at the top
 - FAQ
-  - Schedule: add newsletter link
   - tickets: update for bulk purchasing
   - workshops: need to update paid mention, maybe also emphasize the "do not include"
 - "use this train station"

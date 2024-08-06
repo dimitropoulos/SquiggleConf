@@ -19,8 +19,8 @@ const faqs: FAQSection[] = [
 		[
 			[
 				"What events are you planning?",
-				(await markdown(`
-We will let you know soon! This is partially dependent on corporate sponsorships. Subscribe to the newsletter to be the first to know!
+				await markdown(`
+We will let you know soon! This is partially dependent on corporate sponsorships. Subscribe to the <a href="/#newsletter">newsletter</a> to be the first to know!
 
 <br />
 
@@ -29,11 +29,13 @@ At the very least, SquiggleConf will include:
 - Social events for all attendees around the conference
 - Breaks and breakout sessions during the conference
 - Spaces to ask speakers questions and network with other attendees
-				`)) as string,
+				`),
 			],
 			[
 				"What is the full schedule of events?",
-				"We will let you know soon! This is partially dependent on the CFP and corporate sponsorships. Subscribe to the newsletter to be the first to know!",
+				await markdown(
+					`We will let you know soon! This is partially dependent on the CFP and corporate sponsorships. Subscribe to the <a href="/#newsletter">newsletter</a> to be the first to know!`,
+				),
 			],
 		],
 	],
@@ -51,23 +53,23 @@ At the very least, SquiggleConf will include:
 		[
 			[
 				"Do you have bulk purchasing and/or group options?",
-				(await markdown(
+				await markdown(
 					`
 We will later this summer. Subscribe to the newsletter to be the first to know!
 
 See also [Sponsorships](/#sponsorships) for options to get ticket discounts and promote your development brand.
 					`,
-				)) as string,
+				),
 			],
 			[
 				"If I can't afford a full ticket, is there a way for me to come?",
-				(await markdown(
+				await markdown(
 					'We\'ll have a plethora of discounts and scholarships for diversity, local bootcamp and university students, and loyal attendees of <a href="https://bostonts.club" target="_blank">Boston TS Club</a>. We\'ll also have space for [volunteers](/about#volunteering).',
-				)) as string,
+				),
 			],
 			[
 				"What does or doesn't a ticket include?",
-				(await markdown(
+				await markdown(
 					`
 Your ticket gets you:
 
@@ -81,13 +83,13 @@ Note that talk tickets do not include:
 - Meals, including lunch at <a href="https://faneuilhallmarketplace.com" rel="noreferrer" target="_blank">Faneuil Hall Marketplace</a>
 - Paid workshop access: those tickets will be separate and are not yet available
 					`,
-				)) as string,
+				),
 			],
 			[
 				"What is your refund policy?",
-				(await markdown(
+				await markdown(
 					"Full refunds. If you can't make it, please let us know - we can work with you. <br /> Do not come to SquiggleConf if you have any COVID symptoms.",
-				)) as string,
+				),
 			],
 		],
 	],
