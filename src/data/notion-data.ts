@@ -132,7 +132,7 @@ export const peopleBySlug = {
 			youtube: null,
 		},
 		name: "Fatimah Sarah Khalid",
-		qualification: "",
+		qualification: "Developer Evangelist, [GitLab](https://gitlab.com/)",
 		role: "",
 		slug: "fatimah-sarah-khalid",
 	},
@@ -228,7 +228,7 @@ export const peopleBySlug = {
 		},
 		name: "Max Kless",
 		qualification:
-			"VSCode Extension for [Nx Console](https://github.com/nrwl/nx-console) Author",
+			"[Nx Console](https://github.com/nrwl/nx-console) VSCode Extension Maintainer",
 		role: "Senior Engineer, [Nx](https://nx.dev/)",
 		slug: "max-kless",
 	},
@@ -381,7 +381,8 @@ export const peopleBySlug = {
 			youtube: null,
 		},
 		name: "Yagiz Nizipli",
-		qualification: "[Node.JS TSC](https://github.com/nodejs/TSC) Member",
+		qualification:
+			"[Node.JS TSC](https://github.com/nodejs/TSC) Member, a top Node.JS [Contributor](https://github.com/nodejs/node/commits?author=anonrig)",
 		role: "Principal Systems Engineer, [Cloudflare](https://www.cloudflare.com/)",
 		slug: "yagiz-nizipli",
 	},
@@ -401,7 +402,7 @@ export interface TalkInfo {
 export const talksBySlug = {
 	"talk-aakansha-doshi": {
 		description:
-			"How do we manipulate pixels in a DOM-oriented world? HTML \\<canvas\\>! I recently built Excalidraw’s ‘labeled arrows’ feature, which heavily utilizes all sorts of Canvas element JavaScript APIs for rich graphics and media display in web browsers. Let’s dig in to see how Canvas and Excalidraw work under the hood!\n\nI’ll cover with demos:\n- Why labeled arrows were built: including the ‘how’ and ‘why’ of design decisions\n- The architecture of how elements are structured and how text is tied to the arrow\n- Rendering arrows in canvas, including multi-point arrows and transparency effects\n- How Canvas and SVG compare & contrast with mask attributes, clipping, and clearRect\n- Performance optimizations such as caching labeled repeat computational and graphics work\n\nThe audience will come away understanding how Canvas APIs work together - along with how labeled arrows were implemented in Excalidraw.",
+			"How do we manipulate pixels in a DOM-oriented world? HTML \\<canvas\\>! I recently built [Excalidraw](https://excalidraw.com/)’s ‘labeled arrows’ feature, which heavily utilizes all sorts of Canvas element JavaScript APIs for rich graphics and media display in web browsers. Let’s dig in to see how Canvas and Excalidraw work under the hood!\n\nI’ll cover with demos:\n- Why labeled arrows were built: including the ‘how’ and ‘why’ of design decisions\n- The architecture of how elements are structured and how text is tied to the arrow\n- Rendering arrows in canvas, including multi-point arrows and transparency effects\n- How Canvas and SVG compare & contrast with mask attributes, clipping, and clearRect\n- Performance optimizations such as caching labeled repeat computational and graphics work\n\nThe audience will come away understanding how Canvas APIs work together - along with how labeled arrows were implemented in Excalidraw.",
 		people: [peopleBySlug["aakansha-doshi"]],
 		slug: "talk-aakansha-doshi",
 		tags: ["Canvas", "SVG", "Performance"],
@@ -419,7 +420,7 @@ export const talksBySlug = {
 	},
 	"talk-corina-murg": {
 		description:
-			"Accessibility is a core component of the web -- yet many web development teams treat it as an afterthought. Building with accessibility in mind involves understanding the rules of accessibility and how to use web dev tools to your advantage in designing and debugging it.\n\nLet’s go through the Accessibility Tree: a hidden gem for understanding how a webpage will be presented through various accessibility lenses. We’ll explore how to access and use the accessibility tree through DevTools and discuss the slight differences in how different browsers render the tree. From there, we’ll delve into the structure of the tree and explore its relationship to the DOM. \n\nBy understanding and utilizing the Accessibility Tree, we can build digital products and services that are more inclusive and compliant.",
+			"Accessibility is a core component of the web — yet many web development teams treat it as an afterthought. Building with accessibility in mind involves understanding the rules of accessibility and how to use web dev tools to your advantage in designing and debugging it.\n\nLet’s go through the [Accessibility Tree](https://developer.chrome.com/blog/full-accessibility-tree): a hidden gem for understanding how a webpage will be presented through various accessibility lenses. We’ll explore how to access and use the accessibility tree through DevTools and discuss the slight differences in how different browsers render the tree. From there, we’ll delve into the structure of the tree and explore its relationship to the DOM. \n\nBy understanding and utilizing the Accessibility Tree, we can build digital products and services that are more inclusive and compliant.",
 		people: [peopleBySlug["corina-murg"]],
 		slug: "talk-corina-murg",
 		tags: [
@@ -442,7 +443,7 @@ export const talksBySlug = {
 	},
 	"talk-don-isaac": {
 		description:
-			"The Oxc Project is a collection of high-performance JavaScript/TypeScript tools written in Rust. It comes with a parser, a linter, and other build-time libraries and utilities. But didn’t these already exist? Why did we need to rewrite them in another language?\n\nGreat question! This talk will walk through the incredible performance and interoperability opportunities of moving shared web dev tooling to a native-speed language like Rust. You’ll see both how to use these wonderfully fast new tools in your project to unlock speedy and reliable builds immediately.\n\nEven better, you’ll also get an insider’s view of how these projects are built. There’s all sorts of fantastic engineering at play, ranging from re-using test suites from Babel and TypeScript themselves to community-oriented integration tests to ensure compatibility. The end result is a rich set of community tooling for the Rust ecosystem that is a joy to work with.",
+			"The [Oxc Project](https://oxc.rs/) is a collection of high-performance JavaScript/TypeScript tools written in Rust. It comes with a parser, a linter, and other build-time libraries and utilities. But didn’t these already exist? Why did we need to rewrite them in another language?\n\nGreat questions! This talk will walk through the incredible performance and interoperability opportunities of moving shared web dev tooling to a native-speed language like Rust. You’ll see both how to use these wonderfully fast new tools in your project to unlock speedy and reliable builds immediately.\n\nEven better, you’ll also get an insider’s view of how these projects are built. There’s all sorts of fantastic engineering at play, ranging from re-using test suites from Babel and TypeScript themselves to community-oriented integration tests to ensure compatibility. The end result is a rich set of community tooling for the Rust ecosystem that is a joy to work with.",
 		people: [peopleBySlug["don-isaac"]],
 		slug: "talk-don-isaac",
 		tags: ["Rust", "CLIs", "Performance", "TypeScript"],
@@ -451,7 +452,7 @@ export const talksBySlug = {
 	},
 	"talk-jess-lin": {
 		description:
-			"Writing a technical blog post may sound like a solo task, but in reality it’s just like good software—best with a writer and reviewer/editor. But what does that process look like, and what’s the role of the editor?\n\nIn this talk, I’ll first show elements of a good versus great blog post, with examples. A good post gets the information across in an orderly fashion. A great blog post starts from great source material, and manages to be a page turner. Sometimes, good is all you need, but it’s useful to recognize when you have the potential for great.\n\nNext, I’ll show real examples of specific edits to blog posts I consider good and great. In general, you need to first edit at the macro level \\(e.g. throwing out an entire first draft and choosing a completely different angle\\) and then the micro level \\(e.g. restructuring sentences for clarity\\). The title and opening deserve special attention, and I’ll share tactics you can use to write and refine them.\n\nMarketing your software isn’t just for marketers. These techniques will help you in everything from pull request descriptions to release announcements. I’ll use real material from a series of blog posts we published in spring 2024 at Render to show how much of a difference applying editing craft to communications can make.",
+			"Writing a technical blog post may sound like a solo task, but in reality it’s just like good software—best with a writer and reviewer/editor. But what does that process look like, and what’s the role of the editor?\n\nIn this talk, I’ll first show elements of a good versus great blog post, with examples. A good post gets the information across in an orderly fashion. A great blog post starts from great source material, and manages to be a page turner. Sometimes, good is all you need, but it’s useful to recognize when you have the potential for great.\n\nNext, I’ll show real examples of specific edits to blog posts I consider good and great. In general, you need to first edit at the macro level \\(e.g. throwing out an entire first draft and choosing a completely different angle\\) and then the micro level \\(e.g. restructuring sentences for clarity\\). The title and opening deserve special attention, and I’ll share tactics you can use to write and refine them.\n\nMarketing your software isn’t just for marketers. These techniques will help you in everything from pull request descriptions to release announcements. I’ll use real material from a series of blog posts we published in spring 2024 at [Render](https://render.com/) to show how much of a difference applying editing craft to communications can make.",
 		people: [peopleBySlug["jess-lin"]],
 		slug: "talk-jess-lin",
 		tags: [
@@ -465,7 +466,7 @@ export const talksBySlug = {
 	},
 	"talk-laurynas-keturakis": {
 		description:
-			"Traces are an incredibly useful tool for understanding how your code actually runs function-by-function. With OpenTelemetry being accepted as standard by vendors and language platforms alike, there has never been a better time to start using it. Yet, many teams adopt traces late in the development cycle when code is hard to change and new tools always take time and money to learn.\n\nThis talk will show you how you can get started using tracing locally and what you can get out of it. It will discuss the benefits you get from well-traced applications and why it is so hard to get there.  We’ll cover what makes tracing hard, how to smooth out those rough edges and get you debugging your code in no time!",
+			"Traces are an incredibly useful tool for understanding how your code actually runs function-by-function. With [OpenTelemetry](https://opentelemetry.io/) being accepted as standard by vendors and language platforms alike, there has never been a better time to start using it. Yet, many teams adopt traces late in the development cycle when code is hard to change and new tools always take time and money to learn.\n\nThis talk will show you how you can get started using tracing locally and what you can get out of it. It will discuss the benefits you get from well-traced applications and why it is so hard to get there.  We’ll cover what makes tracing hard, how to smooth out those rough edges and get you debugging your code in no time!",
 		people: [peopleBySlug["laurynas-keturakis"]],
 		slug: "talk-laurynas-keturakis",
 		tags: ["Tracing", "Debugging", "Open Telemetry"],
@@ -483,7 +484,7 @@ export const talksBySlug = {
 	},
 	"talk-rachel-nabors": {
 		description:
-			"Did you know web animations have their own dedicated browser dev tools? Come learn how to debug timeline based animations in the browser and share animation specs across teams!\n\nOften design happens in Figma and development happens in components. During that hand-off, motion and interaction design can fall through the cracks. But there are great tools and techniques that marry development and design, bringing life and personality to your UI.\n\nWe’ll start with the basics needed to add some visual interest to any project and escalate all the way to integrating complex, orchestrated animations from a motion design team into your workflow.  We’ll also cover CSS animation utility libraries, easing tools for creating custom eases and springs, using the web animations API to react to and chain animation events.",
+			"Did you know web animations have their own dedicated browser dev tools? Come learn how to debug timeline based animations in the browser and share animation specs across teams!\n\nOften design happens in Figma and development happens in components. During that hand-off, motion and interaction design can fall through the cracks. But there are great tools and techniques that marry development and design, bringing life and personality to your UI.\n\nWe’ll start with the basics needed to add some visual interest to any project and escalate all the way to integrating complex, orchestrated animations from a motion design team into your workflow.  We’ll also cover CSS animation utility libraries, easing tools for creating custom eases and springs, using the [Web Animations API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API/Using_the_Web_Animations_API) to react to and chain animation events.",
 		people: [peopleBySlug["rachel-nabors"]],
 		slug: "talk-rachel-nabors",
 		tags: [
@@ -497,7 +498,7 @@ export const talksBySlug = {
 	},
 	"talk-rick-viscomi": {
 		description:
-			"Excellent tools are at the heart of every performance optimization workflow. From synthetic testing, auditing, and diagnosing performance issues to collecting and analyzing performance data from real-world user experiences. A good performance workflow utilizes both real-world AND synthetic tooling to help you understand how fast your site is and how to make it faster.\n\nIn this talk, we'll explore Google's recommended web performance tooling workflow for fast Core Web Vitals. We'll focus on Chrome DevTools and the powerful Performance panel to get a better understanding of what's happening under the hood. We'll also look at a typical data pipeline for collecting and analyzing real-user data to get a better understanding of the top performance issues and opportunities. And finally, we'll look at a few techniques to significantly improve some of the most common and impactful issues with loading performance and interaction responsiveness.",
+			"Excellent tools are at the heart of every performance optimization workflow. From synthetic testing, auditing, and diagnosing performance issues to collecting and analyzing performance data from real-world user experiences. A good performance workflow utilizes both real-world and synthetic tooling to help you understand how fast your site is and how to make it faster.\n\nIn this talk, we'll explore Google's recommended web performance tooling workflow for fast [Core Web Vitals](https://web.dev/articles/vitals). We'll focus on Chrome DevTools and the powerful [Performance panel](https://developer.chrome.com/docs/devtools/performance) to get a better understanding of what's happening under the hood. We'll also look at a typical data pipeline for collecting and analyzing real-user data to get a better understanding of the top performance issues and opportunities. Finally, we'll look at a few techniques to significantly improve some of the most common and impactful issues with loading performance and interaction responsiveness.",
 		people: [peopleBySlug["rick-viscomi"]],
 		slug: "talk-rick-viscomi",
 		tags: ["Chrome DevTools", "Performance", "Core Web Vitals"],
@@ -515,7 +516,7 @@ export const talksBySlug = {
 	},
 	"talk-robby-russell": {
 		description:
-			"Join Robby Russell, the creator of Oh My Zsh, as he reflects on the remarkable journey of this CLI framework on its 15th anniversary. Robby will share his candid experiences and insights into how a project that started without a clear plan managed to gain widespread adoption across the software industry. \n\nWe’ll travel through the origins of Oh My Zsh, its surprising growth, and the valuable lessons he learned along the way. Robby will highlight the significance of creating user-friendly and practical tools, especially for new developers. He'll delve into the art of engaging with an open-source community and his mission to bring enjoyment to the command line. Robby's advice on developing a successful open-source project will resonate with web developers eager to improve their tools and contribute to community-driven innovation.\n\nThis talk aims to show that anyone can launch a successful software project with the right mindset and motivation. Robby's story demonstrates the power of solving problems for yourself and your peers. He will discuss building and sharing useful tools, showing that even small efforts can have a significant impact. Attend this talk to gain a deeper understanding of the power of collaboration and how these principles can be applied to your work in and around developer tooling.",
+			"Join Robby Russell, the creator of [Oh My Zsh](https://ohmyz.sh/), as he reflects on the remarkable journey of this CLI framework on its 15th anniversary. Robby will share his candid experiences and insights into how a project that started without a clear plan managed to gain widespread adoption across the software industry. \n\nWe’ll travel through the origins of Oh My Zsh, its surprising growth, and the valuable lessons he learned along the way. Robby will highlight the significance of creating user-friendly and practical tools, especially for new developers. He'll delve into the art of engaging with an open-source community and his mission to bring enjoyment to the command line. Robby's advice on developing a successful open-source project will resonate with web developers eager to improve their tools and contribute to community-driven innovation.\n\nThis talk aims to show that anyone can launch a successful software project with the right mindset and motivation. Robby's story demonstrates the power of solving problems for yourself and your peers. He will discuss building and sharing useful tools, showing that even small efforts can have a significant impact. This talk will give you a deeper understanding of the power of collaboration and how these principles can be applied to your work in and around developer tooling.",
 		people: [peopleBySlug["robby-russell"]],
 		slug: "talk-robby-russell",
 		tags: [
@@ -546,12 +547,18 @@ export const talksBySlug = {
 		title: "Node.js Core Performance Optimizations, Revealed",
 	},
 	"workshop-katerina-and-max": {
-		description: "",
+		description:
+			"You will leave this workshop having built and installed a custom VSCode and JetBrains extension!  Learn how to enchant your IDE in a \\(seasonally witch-themed!\\) deep dive into IDE plugins and what it takes to build one.  We’ve learned a lot in the process of building and maintaining editor extensions, and we’re ready to share our best tips and tricks!\n\nOnce you’re feeling confident building a basic cross-platform extension, you’ll get a chance to implement a small feature in a mature one: [Nx Console](https://marketplace.visualstudio.com/items?itemName=nrwl.angular-console). We’ll learn a bit about what [Nx](https://nx.dev/) the role the extension has in our customers’ satisfaction with our tools.\n\nIf you’ve ever thought to yourself “I wish someone at my company could make an editor extension” then after this workshop, you might be the one to do it!",
 		people: [peopleBySlug["katerina-skroumpelou"], peopleBySlug["max-kless"]],
 		slug: "workshop-katerina-and-max",
-		tags: ["Editor Extensions", "TypeScript", "Language Server Protocol"],
+		tags: [
+			"Editor Extensions",
+			"Language Server Protocol",
+			"TypeScript",
+			"Kotlin",
+		],
 		talkFormat: "Workshop",
-		title: "build a VS Code extension with the makers of Nx Console",
+		title: "Build a VS Code Extension with the Makers of Nx Console",
 	},
 	"workshop-sylwia-vargas": {
 		description: "",
