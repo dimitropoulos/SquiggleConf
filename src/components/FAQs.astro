@@ -6,6 +6,7 @@ import dropdown from "~/assets/glyphs/dropdown.svg";
 
 import Heading from "./Heading.astro";
 import HeadingFlanked from "./HeadingFlanked.astro";
+import { links } from "~/data";
 
 type FAQSection = [string, [string, string][]];
 
@@ -54,11 +55,7 @@ At the very least, SquiggleConf will include:
 			[
 				"Do you have bulk purchasing and/or group options?",
 				await markdown(
-					`
-We will later this summer. Subscribe to the newsletter to be the first to know!
-
-See also [Sponsorships](/#sponsorships) for options to get ticket discounts and promote your development brand.
-					`,
+					`Yes! See the [tickets purchase link](${links.tickets}) for the options.`,
 				),
 			],
 			[
@@ -75,13 +72,14 @@ Your ticket gets you:
 
 - Access to all attendee social events before, during, and after the conference
 - Complete access to the talks day (Thursday, October 3rd)
+- Access to the morning workshops (Friday, October 4th)
 - Light beverages and snacks through the conference day
-- One "swag bag" with branded apparel and toys
+- One "swag bag" with branded apparel and items
 
-Note that talk tickets do not include:
+Note that talk tickets _do not_ include:
 
 - Meals, including lunch at <a href="https://faneuilhallmarketplace.com" rel="noreferrer" target="_blank">Faneuil Hall Marketplace</a>
-- Paid workshop access: those tickets will be separate and are not yet available
+- Travel to or from the conference
 					`,
 				),
 			],
