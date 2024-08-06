@@ -5,7 +5,7 @@ import AnchorButton from "./AnchorButton.astro";
 import Hero from "./Hero.astro";
 import HeroName from "./HeroName.astro";
 import NoBreak from "./NoBreak.astro";
-import IconOpenInNew from "~/assets/logos/icon-open-in-new.svg";
+import LinkOut from "~/assets/glyphs/link-out.svg";
 import { Image } from "astro:assets";
 import ThemeToggle from "./ThemeToggle.astro";
 ---
@@ -25,7 +25,7 @@ import ThemeToggle from "./ThemeToggle.astro";
 		>
 			<NoBreak>Apply for</NoBreak>
 			<NoBreak>DEI Scholarship </NoBreak>
-			<Image alt="open in new window" src={IconOpenInNew} />
+			<Image alt="" class="link-out" src={LinkOut} />
 		</a>
 		<a
 			class="sub-mention"
@@ -35,7 +35,7 @@ import ThemeToggle from "./ThemeToggle.astro";
 		>
 			<NoBreak>Apply to</NoBreak>
 			<NoBreak>Volunteer</NoBreak>
-			<Image alt="open in new window" src={IconOpenInNew} />
+			<Image alt="" class="link-out" src={LinkOut} />
 		</a>
 		<a
 			class="sub-mention"
@@ -45,7 +45,7 @@ import ThemeToggle from "./ThemeToggle.astro";
 		>
 			<NoBreak>Bulk Tickets</NoBreak>
 			<NoBreak>Now Available</NoBreak>
-			<Image alt="open in new window" src={IconOpenInNew} />
+			<Image alt="" class="link-out" src={LinkOut} />
 		</a>
 	</div>
 
@@ -69,6 +69,11 @@ import ThemeToggle from "./ThemeToggle.astro";
 
 	.sub-mention:hover {
 		color: var(--colorWhite);
+	}
+
+	.link-out {
+		height: 1rem;
+		width: 1rem;
 	}
 
 	@media (min-width: 819px) {

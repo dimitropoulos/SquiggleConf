@@ -1,10 +1,3 @@
-## styling issues
-
-- fix weird cross-platform emoji
-  - for link-out (under main hero)
-    - added icon, but don't quite know how to do it in astro
-  - link (for talk section titles)
-    - added icon and replaced, but it hits the whole "anchor tag having a div child" thing
 
 ## mechanical issues
 
