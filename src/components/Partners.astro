@@ -20,7 +20,18 @@ import HeadingFlanked from "./HeadingFlanked.astro";
 		{
 			partners.map((partner) => (
 				<a href={partner.href} rel="noreferrer" target="_blank">
-					<Image alt="" src={partner.logo} height={128} />
+					<Image
+						alt=""
+						class="partner-logo-dark"
+						src={partner.logos.dark}
+						height={128}
+					/>
+					<Image
+						alt=""
+						class="partner-logo-light"
+						src={partner.logos.light}
+						height={128}
+					/>
 				</a>
 			))
 		}
@@ -35,6 +46,11 @@ import HeadingFlanked from "./HeadingFlanked.astro";
 		padding: 2rem;
 		justify-content: center;
 		margin: auto;
+	}
+
+	html.dark .partner-logo-light,
+	html:not(.dark) .partner-logo-dark {
+		display: none;
 	}
 
 	@media (min-width: 819px) {

@@ -5,7 +5,8 @@ import github from "~/assets/logos/github.svg";
 import linkedin from "~/assets/logos/linkedin.svg";
 import mastodon from "~/assets/logos/mastodon.svg";
 import twitter from "~/assets/logos/twitter.svg";
-import thisWeekInReact from "~/assets/partners/this-week-in-react.png";
+import thisWeekInReactDarkMode from "~/assets/partners/this-week-in-react-dark-mode.png";
+import thisWeekInReactLightMode from "~/assets/partners/this-week-in-react-light-mode.png";
 import inngest from "~/assets/sponsors/inngest.svg";
 import inngestBlack from "~/assets/sponsors/inngest-black.svg";
 import openjsFoundationColor from "~/assets/sponsors/openjs-foundation-color.svg";
@@ -17,7 +18,10 @@ export type { Person, TalkFormat, TalkInfo } from "~/data/notion-data";
 export const partners = [
 	{
 		href: "https://thisweekinreact.com?utm_source=squiggleconf",
-		logo: thisWeekInReact,
+		logos: {
+			dark: thisWeekInReactDarkMode,
+			light: thisWeekInReactLightMode,
+		},
 		title: "This Week In React",
 	},
 ];

@@ -1,26 +1,25 @@
 ---
-import BodyText from "~/components/BodyText.astro";
 import Partners from "~/components/Partners.astro";
 import Sponsors from "~/components/Sponsors.astro";
-import Information from "~/components/Information.astro";
 import PrimaryContents from "~/components/PrimaryContents.astro";
 import PrimaryHero from "~/components/PrimaryHero.astro";
 import SpeakersContent from "~/components/SpeakersContent.astro";
 import ContentLayout from "~/layouts/ContentLayout.astro";
 import MCs from "~/components/MCs.astro";
 import Newsletter from "~/components/Newsletter.astro";
+import FunInfo from "~/components/FunInfo.astro";
 ---
 
 <ContentLayout>
 	<PrimaryHero />
 	<PrimaryContents>
 		<div class="contents">
-			<Information />
 			<SpeakersContent />
 			<MCs />
 			<Sponsors />
 			<Partners />
 			<Newsletter class="newsletter" />
+			<FunInfo />
 		</div>
 	</PrimaryContents>
 </ContentLayout>
