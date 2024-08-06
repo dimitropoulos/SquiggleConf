@@ -22,9 +22,6 @@ import ContentLayout from "~/layouts/ContentLayout.astro";
 			<strong>SQUOCT24</strong> — and let us know if not.
 		</BodyText>
 
-		<br />
-		<br />
-
 		<iframe
 			allowfullscreen=""
 			height="450"
@@ -34,9 +31,7 @@ import ContentLayout from "~/layouts/ContentLayout.astro";
 			style="border:0;"
 			width="600"></iframe>
 
-		<br />
-
-		<HeadingFlanked id="flights">Flights</HeadingFlanked>
+		<HeadingFlanked class="travel-heading" id="flights">Flights</HeadingFlanked>
 
 		<BodyText as="p" size="large" width="full">
 			<a
@@ -48,23 +43,53 @@ import ContentLayout from "~/layouts/ContentLayout.astro";
 			> is your best bet to get into Boston from out-of-town.
 		</BodyText>
 
-		<br />
-
-		<HeadingFlanked id="local-directions">Local Directions</HeadingFlanked>
+		<HeadingFlanked class="travel-heading" id="trains">Trains</HeadingFlanked>
 
 		<BodyText as="p" size="large" width="full">
-			Once you're in Boston, see <a
+			The <a
+				href="https://www.mbta.com/stops/place-sstat"
+				target="_blank"
+				rel="noreferrer">MBTA South Station</a
+			> is a 15-20 minute walk from the conference center.
+			<br />
+			<a
+				href="https://www.amtrak.com/stations/bos"
+				target="_blank"
+				rel="noreferrer">Amtrak</a
+			> arrives there, including ~4 hour trains from New York City.
+		</BodyText>
+
+		<HeadingFlanked class="travel-heading" id="local-directions">
+			Local Directions
+		</HeadingFlanked>
+
+		<BodyText as="p" size="large" width="full">
+			See <a
 				href="https://www.neaq.org/visit/directions-and-parking"
 				target="_blank"
-				rel="noreferrer">neaq.org/visit/directions-and-parking</a
-			> for directions to the New England Aquarium. The Simons Theater is in the
-			same address.
+				rel="noreferrer">neaq.org</a
+			> for New England Aquarium directions. The Simons Theater is in the same address.
+			<br />
+			The <a
+				href="https://www.mbta.com/stops/place-aqucl"
+				target="_blank"
+				rel="noreferrer">Blue Line Aquarium subway stop</a
+			> and <a
+				href="https://www.mbta.com/stops/30233"
+				target="_blank"
+				rel="noreferrer">Atlantic Ave @ Milk St 4 Line Bus stop</a
+			> are next door.
 		</BodyText>
 	</PrimaryContents>
 </ContentLayout>
 
 <style>
+	.travel-heading {
+		margin-top: 5rem;
+	}
+
 	iframe {
+		margin-top: 2rem;
 		max-width: calc(100vw - var(--widthBodyPadding) * 2);
 	}
 </style>
