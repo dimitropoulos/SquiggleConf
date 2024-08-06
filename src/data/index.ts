@@ -101,8 +101,8 @@ export const locations = [
 type TalkSlug = keyof typeof notionData.talksBySlug;
 
 const talksToExclude: TalkSlug[] = [
-	// "workshop-katerina-and-max",
-	// "workshop-sylwia-vargas",
+	// (Sylwia might not be able to make it 😢)
+	"workshop-sylwia-vargas",
 ];
 
 const sortOrder: TalkSlug[] = [
