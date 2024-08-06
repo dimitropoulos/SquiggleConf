@@ -5,6 +5,7 @@ import github from "~/assets/logos/github.svg";
 import linkedin from "~/assets/logos/linkedin.svg";
 import mastodon from "~/assets/logos/mastodon.svg";
 import twitter from "~/assets/logos/twitter.svg";
+import jsParty from "~/assets/partners/js-party.png";
 import thisWeekInReactDarkMode from "~/assets/partners/this-week-in-react-dark-mode.png";
 import thisWeekInReactLightMode from "~/assets/partners/this-week-in-react-light-mode.png";
 import inngest from "~/assets/sponsors/inngest.svg";
@@ -16,6 +17,14 @@ import * as notionData from "~/data/notion-data";
 export type { Person, TalkFormat, TalkInfo } from "~/data/notion-data";
 
 export const partners = [
+	{
+		href: "https://changelog.com/jsparty?utm_source=squiggleconf",
+		logos: {
+			dark: jsParty,
+			light: jsParty,
+		},
+		title: "JS Party",
+	},
 	{
 		href: "https://thisweekinreact.com?utm_source=squiggleconf",
 		logos: {
