@@ -1,45 +1,53 @@
 ---
-import ContentLayout from "~/layouts/ContentLayout.astro";
 import HeroForPage from "~/components/HeroForPage.astro";
 import PrimaryContents from "~/components/PrimaryContents.astro";
-import { TalkFormat, talks } from "~/data";
 import Talk from "~/components/Talk.astro";
 import BodyText from "~/components/BodyText.astro";
-import TagLine from "~/components/TagLine.astro";
 import HeadingFlanked from "~/components/HeadingFlanked.astro";
+import { talks } from "~/data/index.js";
+import ContentLayout from "~/layouts/ContentLayout.astro";
 
 const sections = [
 	{
 		talkFormat: "Full",
 		name: "Full-Length Talks",
-		description: "30 minute talks with 5 minutes for questions",
+		description:
+			"30 minute talks with 5 minutes of live Q&A. These talks will dive into their subject area and show new ways of working with your tooling.",
 		date: "October 3rd",
 	},
 	{
 		talkFormat: "Lightning",
 		name: "Lightning Talks",
-		description: "10 minute talks with 3 minutes for questions",
+		description:
+			"10 minute talks with 3 minutes of live Q&A. These sessions show great tech that you can talk about with the speaker between sessions.",
 		date: "October 3rd",
 	},
 	{
 		talkFormat: "Workshop",
 		name: "Workshops",
-		description: "2 hour hands-on sessions",
+		description:
+			"2 hour hands-on sessions with the makers of dev tools. These in-depth, interactive workshops will level up your dev tool crafting skills.",
 		date: "October 4th",
 	},
-] satisfies {
-	talkFormat: TalkFormat;
-	name: string;
-	description: string;
-	date: string;
-}[];
+] as const;
 ---
 
 <ContentLayout>
-	<HeroForPage>Talks</HeroForPage>
+	<HeroForPage>Sessions</HeroForPage>
 
 	<PrimaryContents>
-		<TagLine />
+		<BodyText class="sessions-top" size="large" width="full">
+			SquiggleConf 2024 will consist of two days:
+			<ul>
+				<li>
+					Thursday, October 3rd: A full-day single-track series of full-length
+					and lightning talks
+				</li>
+				<li>Friday, October 4th: Free 1-2 hour morning workshops</li>
+			</ul>
+			You’ll emerge with the best techniques to supercharge your projects — whether
+			you’re already a tooling wizard or trying to become one.
+		</BodyText>
 
 		{
 			sections.map(({ talkFormat, name, description, date }) => (
@@ -48,7 +56,6 @@ const sections = [
 						{name}
 					</HeadingFlanked>
 					<BodyText as="p">{description}</BodyText>
-					<BodyText as="p">{date}</BodyText>
 					<ul class="talks-list">
 						{talks
 							.filter((t) => t.talkFormat === talkFormat)
@@ -68,6 +75,11 @@ const sections = [
 </ContentLayout>
 
 <style>
+	.sessions-top {
+		margin-bottom: 5rem;
+		text-align: left;
+	}
+
 	.talks-list {
 		display: flex;
 		flex-direction: column;

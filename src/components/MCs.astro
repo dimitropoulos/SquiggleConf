@@ -6,10 +6,16 @@ import FullSection from "./FullSection.astro";
 import HeadingFlanked from "./HeadingFlanked.astro";
 import Speaker from "./Speaker.astro";
 import SubtleCard from "./SubtleCard.astro";
+import BodyText from "./BodyText.astro";
 ---
 
 <FullSection class="full-mcs">
 	<HeadingFlanked id="mcs">MCs</HeadingFlanked>
+
+	<BodyText as="p" size="large" width="lean">
+		Our MCs are friendly web dev tooling connoisseurs who'll introduce the
+		sessions and other conference activities.
+	</BodyText>
 
 	<CardsList>
 		{

@@ -1,13 +1,4 @@
 
-## mechanical issues
-
-- change /talks to /sessions (?)
-  - (partially done: just needs styling) front page `Talks` and `Workshops` should go to their respective sections on the /talks pages
-- add section at top of /talks page to say that it's single-track
-  - possibly replacing TagLine at the top
-- "use this train station"
-  - bonus: small "I'm coming from NYC" section
-
 ## copy issues
 
 - need description for Fatimah
