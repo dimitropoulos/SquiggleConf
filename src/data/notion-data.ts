@@ -117,7 +117,7 @@ export const peopleBySlug = {
 		role: "",
 		slug: "don-isaac",
 	},
-	"fatimah-sarah-khalid": {
+	"fatima-sarah-khalid": {
 		bio: "",
 		links: {
 			bluesky: null,
@@ -131,10 +131,10 @@ export const peopleBySlug = {
 			website: null,
 			youtube: null,
 		},
-		name: "Fatimah Sarah Khalid",
+		name: "Fatima Sarah Khalid",
 		qualification: "Developer Evangelist, [GitLab](https://gitlab.com/)",
 		role: "",
-		slug: "fatimah-sarah-khalid",
+		slug: "fatima-sarah-khalid",
 	},
 	"jess-lin": {
 		bio: 'I\'ve been a software engineer for a decade. I first worked on an open source IDE at Facebook in 2013; then moved to ads at Pinterest, collaboration tools at Stripe, and absolutely everything at Instabase when it was only 5 people. In recent years, I\'ve enjoyed roles that bring me close to users, first as a deployed engineer at Retool and now as a devrel at Render.On software teams, I\'ve always found myself helping colleagues communicate their technical ideas. With my background, I can help engineers efficiently and with a lot of empathy. I’ve produced, written, and ghostwritten successful tech blog posts that have hit the front page of Hacker News and been featured in prominent newsletters.This talk came out of a colleague at Render asking me to explain all the edits I made to his posts \\(he could see the "what" but not the "why"\\)—and SquiggleConf is the perfect excuse to sit down and explain!',
