@@ -5,6 +5,7 @@ import github from "~/assets/logos/github.svg";
 import linkedin from "~/assets/logos/linkedin.svg";
 import mastodon from "~/assets/logos/mastodon.svg";
 import twitter from "~/assets/logos/twitter.svg";
+import thisWeekInReact from "~/assets/partners/this-week-in-react.png";
 import inngest from "~/assets/sponsors/inngest.svg";
 import inngestBlack from "~/assets/sponsors/inngest-black.svg";
 import openjsFoundationColor from "~/assets/sponsors/openjs-foundation-color.svg";
@@ -12,6 +13,14 @@ import openjsFoundationLight from "~/assets/sponsors/openjs-foundation-light.svg
 import * as notionData from "~/data/notion-data";
 
 export type { Person, TalkFormat, TalkInfo } from "~/data/notion-data";
+
+export const partners = [
+	{
+		href: "https://thisweekinreact.com?utm_source=squiggleconf",
+		logo: thisWeekInReact,
+		title: "This Week In React",
+	},
+];
 
 export const links = {
 	scholarship: "https://forms.gle/pnoAmVgijk3p4j5C7",
