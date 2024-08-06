@@ -1,11 +1,3 @@
-
-## copy issues
-
-- need description for Fatimah
-- need to check description with Nick Nisi
-- need to check description with Dan Vanderkam
-- do a pass of session descriptions in notion to add links
-
 ## script issues
 
 - italicize Effective TypeScript
